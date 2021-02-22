@@ -43,7 +43,7 @@ def get_request(api_request):
 
 def process_data(covid_json):
     '''
-    Returns pandas df of processed json file.
+    Returns a processed pandas dataframe
     '''
 
     raw = pd.DataFrame.from_dict(covid_json)
