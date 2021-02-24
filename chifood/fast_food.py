@@ -29,5 +29,12 @@ def scrape(soup):
     
     return fast_food
 
-
-
+def ff_by_zip(df):
+    '''
+    Collapses data by zip code and returns
+    '''
+    df["ZIP CODE"] = df["ZIP CODE"].astype("string")
+    df[["zip_code", "zip_extra"]] = df["zip"].str.split(".", expand=True)
+    collapse = df["zip_code"].value_counts()
+    collapse.name = "fast_food"
+    return collapse
