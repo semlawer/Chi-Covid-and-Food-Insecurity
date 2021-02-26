@@ -12,23 +12,10 @@ from fuzzywuzzy import fuzz
 from fuzzywuzzy import process
 import fast_food
 
-url ='https://data.cityofchicago.org/resource/uupf-x98q.json?token=5862xfk4f1uhlxqaas83frytd&license_code=1006'
-api_key = "5862xfk4f1uhlxqaas83frytd"
-
-# def read_request(url):
-#     '''
-#     '''
-
-#     r = requests.get(url)
-#     if r is not None:
-#         files = r.json()
-#         df = pd.DataFrame.from_dict(files)
-
-#     return df
 
 path = ""
-website = "https://en.wikipedia.org/wiki/List_of_fast_food_restaurant_chains"
-csv_file = "Business_Licenses_-_Current_Active.csv"
+# website = "https://en.wikipedia.org/wiki/List_of_fast_food_restaurant_chains"
+# csv_file = "Business_Licenses_-_Current_Active.csv"
 
 def read_data(csv_file):
     # script_dir = os.getcwd()
@@ -68,7 +55,7 @@ def read_in_ff(website):
     return df
 
 
-def fuzzy_match_names(df_1, df_2, key1="NAME", key2="FF_NAME", threshold = 90, limit = 2):
+def fuzzy_match_names(df_1, df_2, key1, key2, threshold, limit):
     s = df_2[key2].tolist()
     m = df_1[key1].apply(lambda x: process.extract(x, s, limit=limit))    
     df_1['matches'] = m
@@ -76,8 +63,8 @@ def fuzzy_match_names(df_1, df_2, key1="NAME", key2="FF_NAME", threshold = 90, l
     df_1['matches'] = m2
     fast_food_match = df_1[df_1["matches"].astype(bool)]
     merge = fast_food_match.merge(ff, left_on="matches", right_on=key2)
-
     return merge
+
 
 def ff_by_zip(df):
     '''
@@ -90,5 +77,10 @@ def ff_by_zip(df):
     return collapse
 
 
-
-
+def business_license(website, csv_file):
+    data = read_data(csv)
+    df = clean_bus(data)
+    ff = read_in_ff(website)
+    merge = fuzzy_match_names(df, ff, "NAME", "FF_NAME", 90, 2)
+    by_zip = ff_by_zip(merge)
+    return by_zip
