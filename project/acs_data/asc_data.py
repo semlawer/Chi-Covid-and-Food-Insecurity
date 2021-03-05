@@ -30,7 +30,8 @@ def city_zips(csv_file):
     return zips_chicago
 
 def summarize_employment(csv_file):
-    build = ['ZCTA','% Unemployment rate', 'Median household income', '% Poverty']
+    build = ['ZCTA','perc_unemployed', 'median_income', 'perc_poverty']
+
 
     #income = employ.filter(regex = re.compile(r'median household income', re.IGNORECASE))
 
@@ -50,8 +51,8 @@ def summarize_employment(csv_file):
 def summarize_demographics(csv_file):
     '''
     '''
-    build = ['ZCTA','Total population', '% Female', '% Black or African American',
-            '% Hispanic or Latino (of any race)']
+    build = ['ZCTA','total_population', 'perc_female', 'percent_black',
+            'perc_hispanic']
 
     extract = ['Geographic Area Name','SEX AND AGE!!Total population', 
                 'SEX AND AGE!!Total population!!Female',
@@ -72,7 +73,7 @@ def summarize_demographics(csv_file):
 def summarize_household(csv_file):
     '''
     '''
-    build = ['ZCTA','% Homeowners']
+    build = ['ZCTA','perc_homeowners']
 
     extract = ['Geographic Area Name',
             'Percent!!HOUSING TENURE!!Occupied housing units!!Owner-occupied']
@@ -106,16 +107,18 @@ def create_acs_data(csv_demographics, csv_employment, csv_homes, csv_zips):
         else: 
             acs.drop(index = zcta, axis = 0, inplace = True)
 
-    acs.index.rename('ZIP', inplace = True)
+    acs.index.rename('zipcode', inplace = True)
 
-    acs.to_csv('acs_data.csv')
+    acs_csv = acs.to_csv('acs_data.csv')
     
+    '''
     engine = create_engine('sqlite://acs_data.sqlite3', echo = False)
     connection = engine.connect()
 
     acs.to_sql('acs', con = engine, index = True)
+    '''
 
-    return acs
+    return acs_csv
 
 
 
