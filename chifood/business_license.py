@@ -20,13 +20,14 @@ path = ""
 def read_data(csv_file):
     # script_dir = os.getcwd()
     full_path = "data/{}".format(csv_file)
+    print(full_path)
     #full_path = os.path.expanduser('~/data/csv_file')
     data1 = pd.read_csv(full_path)
 
     return data1
 
-def clean_bus(csv_file):
-    data = read_data(csv_file)
+def clean_bus(data):
+    #data = read_data(csv_file)
     name_zip = data[["LEGAL NAME", "DOING BUSINESS AS NAME", "ZIP CODE", "LOCATION"]]
     name_zip = name_zip.apply(lambda x: x.astype(str).str.upper())
     name_zip[["NAME", "extra"]] = name_zip["DOING BUSINESS AS NAME"].str.split("#", expand=True)
@@ -51,8 +52,10 @@ def read_in_ff(website):
     df.reset_index()
     df["type"] = "Fast Food"
     dollar_df = dollar_chains()
-    df.append(dollar_df)
-    return df
+    frames = [df, dollar_df]
+    #df.append(dollar_df)
+    df_full = pd.concat(frames)
+    return df_full
 
 
 def fuzzy_match_names(df_1, df_2, key1, key2, threshold, limit):
@@ -62,7 +65,11 @@ def fuzzy_match_names(df_1, df_2, key1, key2, threshold, limit):
     m2 = df_1['matches'].apply(lambda x: ', '.join([i[0] for i in x if i[1] >= threshold]))
     df_1['matches'] = m2
     fast_food_match = df_1[df_1["matches"].astype(bool)]
-    merge = fast_food_match.merge(ff, left_on="matches", right_on=key2)
+    merge = fast_food_match.merge(df_2, left_on="matches", right_on=key2)
+    output = merge[["LEGAL NAME", "DOING BUSINESS AS NAME", "ZIP CODE", "LOCATION", "matches", "type"]]
+    output.rename({"ZIP CODE":"ZIP"}, inplace =True)
+    output.columns = output.columns.str.lower()
+    output.to_csv("data/unhealthy_food.csv")
     return merge
 
 
@@ -71,14 +78,14 @@ def ff_by_zip(df):
     Collapses data by zip code and returns
     '''
     #df["ZIP CODE"] = df.groupby("type")["ZIP CODE"].astype("string")
-    df[["zip_code", "zip_extra"]] = df["zip"].str.split(".", expand=True)
-    collapse = df["zip_code"].value_counts().unstack(level = 0)
+    df[["zip", "zip_extra"]] = df["ZIP CODE"].str.split(".", expand=True)
+    collapse = df.groupby("type")["zip"].value_counts().unstack(level = 0)
     collapse.name = "fast_food"
     return collapse
 
 
 def business_license(website, csv_file):
-    data = read_data(csv)
+    data = read_data(csv_file)
     df = clean_bus(data)
     ff = read_in_ff(website)
     merge = fuzzy_match_names(df, ff, "NAME", "FF_NAME", 90, 2)

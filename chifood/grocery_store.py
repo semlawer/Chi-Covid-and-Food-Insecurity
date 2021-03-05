@@ -45,6 +45,7 @@ def process_data(grocery_data):
     Returns a processed pandas dataframe
     '''
     raw = pd.DataFrame.from_dict(grocery_data)
+    raw.to_csv("data/grocery_store.csv")
     return raw
 
 
