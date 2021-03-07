@@ -2,7 +2,7 @@
 This module collects City of Chicago data from the City of Chicago
 Data Portal API
 
-Valeria Balza, Gabriela Palacios, Sophia Mlwawer and Mariel Wiechers
+Valeria Balza, Gabriela Palacios, Sophia Mlawer and Mariel Wiechers
 '''
 
 import requests
@@ -45,6 +45,7 @@ def process_data(grocery_data):
     Returns a processed pandas dataframe
     '''
     raw = pd.DataFrame.from_dict(grocery_data)
+    raw.to_csv("data/grocery_store.csv")
     return raw
 
 
@@ -56,3 +57,11 @@ def grocery_by_zip(df):
     collapse = df["zip_code"].value_counts()
     collapse.name = "grocery_store"
     return collapse
+
+
+def grocery_store(data_url, app_token):
+    build = build_request(data_url, app_token)
+    data = get_request(build)
+    df = process_data(data)
+    by_zip = grocery_by_zip(df)
+    return by_zip
