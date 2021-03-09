@@ -9,13 +9,21 @@ import requests
 import json
 import pandas as pd
 
-output_filename = 'covid_data.csv'
+OUTPUT_FILENAME = 'data/covid_data.csv'
 DATA_URL = 'https://data.cityofchicago.org/resource/yhhz-zm2v.json' + '?'
 APP_TOKEN = 'LVyOCrPCoUZBEPkMulznMLC3Y'
-COLS = {'zip_code': str, 'week_number': int, 'cases_cumulative': int, 
-        'tests_cumulative': int, 'deaths_cumulative': int,
-        'death_rate_cumulative': float, 'population': int, 
-        'zip_code_location': 'object'}
+COLS = {'zip_code': str, 'week_number': int, 'death_rate_cumulative': float}
+
+
+def go(output_filename=OUTPUT_FILENAME):
+    '''
+    '''
+
+    api_request = build_request()
+    covid_json = get_request(api_request)
+    covid_df = process_data(covid_json)
+
+    covid_df.to_csv(output_filename, index=False)
 
 
 def build_request(data_url=DATA_URL, app_token=APP_TOKEN, limit=10000, select=COLS):
@@ -50,21 +58,8 @@ def process_data(covid_json):
     raw = pd.DataFrame.from_dict(covid_json)
     raw['week_number'] = raw['week_number'].astype(int)
     latest_week = raw.week_number.max()
-    
-    df = raw[raw['week_number']==latest_week].fillna(0)
-    df = df.astype(COLS)
+
+    df = raw[raw['week_number']==latest_week].fillna(0).astype(COLS)
+    df = df[['zip_code', 'death_rate_cumulative']]
 
     return df
-
-
-def generate_csv(df, output_filename):
-    '''
-    Writes df to csv
-    '''
-
-    df.to_csv(output_filename, index=False)
-
-
-
-
-
