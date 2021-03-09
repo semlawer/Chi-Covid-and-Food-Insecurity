@@ -17,6 +17,8 @@ COLS = {'zip_code': str, 'week_number': int, 'death_rate_cumulative': float}
 
 def go(output_filename=OUTPUT_FILENAME):
     '''
+    Writes csv file of COVID-19 death rate data
+        at the zip code level
     '''
 
     api_request = build_request()
@@ -60,6 +62,6 @@ def process_data(covid_json):
     latest_week = raw.week_number.max()
 
     df = raw[raw['week_number']==latest_week].fillna(0).astype(COLS)
-    df = df[['zip_code', 'death_rate_cumulative']]
+    df = df[['zip_code', 'death_rate_cumulative']].drop(df[df['zip_code']=='Unknown'].index)
 
     return df
