@@ -9,7 +9,7 @@ import requests
 import json
 import pandas as pd
 
-output_filename = 'test.csv'
+output_filename = 'covid_data.csv'
 DATA_URL = 'https://data.cityofchicago.org/resource/yhhz-zm2v.json' + '?'
 APP_TOKEN = 'LVyOCrPCoUZBEPkMulznMLC3Y'
 COLS = {'zip_code': str, 'week_number': int, 'cases_cumulative': int, 
