@@ -9,6 +9,7 @@ import requests
 import json
 import pandas as pd
 
+output_filename = 'test.csv'
 DATA_URL = 'https://data.cityofchicago.org/resource/yhhz-zm2v.json' + '?'
 APP_TOKEN = 'LVyOCrPCoUZBEPkMulznMLC3Y'
 COLS = {'zip_code': str, 'week_number': int, 'cases_cumulative': int, 
@@ -36,7 +37,7 @@ def get_request(api_request):
     '''
 
     r = requests.get(api_request)
-    covid_data = r.json()
+    covid_json = r.json()
 
     return covid_json
 
@@ -54,6 +55,14 @@ def process_data(covid_json):
     df = df.astype(COLS)
 
     return df
+
+
+def generate_csv(df, output_filename):
+    '''
+    Writes df to csv
+    '''
+
+    df.to_csv(output_filename, index=False)
 
 
 
