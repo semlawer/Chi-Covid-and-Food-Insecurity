@@ -13,16 +13,16 @@ import gen_map
 
 def run():
     # Covid Data
-    covid()
+    covid.go()
     # Food Swamp Data
-    food_swamp()
+    food_swamp.food_swamp()
     # ACS Data
     acs()
     # Combine together and run regression
-    full_data_by_zip = regress()
+    full_data_by_zip = regress.model("food_swamp_data", "acs_data", "covid_data")
     # Food bank data
     food_banks()
-    # Generate maps
+    # # Generate maps
     gen_map()
 
 
