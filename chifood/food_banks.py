@@ -11,6 +11,7 @@ import bs4
 import pandas as pd
 from geopy.geocoders import Nominatim
 
+output_filename = 'food_banks_test.pkl'
 URL = 'https://www.chicagosfoodbank.org/find-food/'
 VALID_ZIPS = ['60601', '60602', '60603', '60604', '60605','60606', '60607',
                   '60608', '60609', '60610', '60611', '60612', '60613', '60614', 
@@ -22,38 +23,67 @@ VALID_ZIPS = ['60601', '60602', '60603', '60604', '60605','60606', '60607',
                   '60654', '60655', '60656', '60657', '60659', '60660', '60661',
                   '60666', '60707','60827']
 
-def retrieve_html(url=URL):
+def go():
     '''
+    Saves file as pickle
     '''
-    req = requests.get(url, headers={'User-Agent': 'Mozilla/5.0'})
 
-    if req.status_code != 200:
+    df = get_locations()
+    food_banks_df = process_df(df)
+    covid_df.to_pickle(output_filename, index=False)
+
+
+def get_html_document(url=URL):
+    '''
+    Retrieves HTML document
+    '''
+
+    r = requests.get(url, headers={'User-Agent': 'Mozilla/5.0'})
+
+    if r.status_code != 200:
         print('Request failed:', url)
         return None
 
-    fbank_soup = bs4.BeautifulSoup(req.text, "html5lib")
-    return fbank_soup
+    soup = bs4.BeautifulSoup(r.text, "html5lib")
+    return soup
 
 
-def get_locations(url):
+def get_locations(url=URL):
     '''
+    Extracts information from HTML. Converts
+        address to lat, lon coordinates
     '''
 
-    soup = retrieve_html(URL)
-    df = pd.DataFrame()
-    food_divs = soup.find_all("div", class_="list--row")
+    df_locs = pd.DataFrame()
+
+    fb_soup = get_html_document(url)
+    food_banks = fb_soup.find_all("div", class_="list--row")
+
     geolocator = Nominatim(user_agent="vbalza@uchicago.edu")
 
-    for f_bank in food_divs:
-        info = f_bank.attrs
-        info["address"] = f_bank.find("div", class_ = "location location--address").text.replace("\n", "").replace("  ", "")
-        info.pop("class")
+    for location in food_banks:
+        inf_df = location.attrs
+        inf_df["address"] = location.find("div", class_ = "location location--address").text.replace("\n", "").replace("  ", "")
+        inf_df.pop("class")
 
-        if info["data-location-zip"] in VALID_ZIPS:
-            coords = geolocator.geocode(info["address"])
+        if inf_df["data-location-zip"] in VALID_ZIPS:
+            coords = geolocator.geocode(inf_df["address"])
             if coords != None:
-                info["lat"] = coords.latitude
-                info["lon"] = coords.longitude
-                df = df.append(info, ignore_index=True)
+                inf_df["lat"] = coords.latitude
+                inf_df["lon"] = coords.longitude
+                df_locs = df_locs.append(inf_df, ignore_index=True)
+
+    return df_locs
+
+
+def process_df(df):
+    '''
+    Processes data. Fixes two point mistakes. Drops duplicate row. Renames columns.
+    '''
+
+    df.loc[df["address"] == "1048 N Campbell Ave, Chicago, IL 60622", ["lat"]] = 41.900899
+    df.loc[df["address"] == "1919 S Ashland Ave, Chicago, IL 60608", ["lat"]] = 41.855516
+    df = df.drop(df.loc[df["address"] == "1919 S Ashland Ave , Chicago, IL 60608"].index)
+    df.columns = ['address', 'category', 'location_id', 'name', 'zip_code', 'lat', 'lon']
 
     return df
