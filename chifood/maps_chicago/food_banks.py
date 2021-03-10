@@ -25,7 +25,7 @@ VALID_ZIPS = ['60601', '60602', '60603', '60604', '60605','60606', '60607',
 
 def go():
     '''
-    Writes CSV file with clean food banks data
+    Saves file as pickle
     '''
 
     df = get_locations()
