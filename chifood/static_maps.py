@@ -6,6 +6,7 @@ Valeria Balza, Gabriela Palacios, Sophia Mlwawer and Mariel Wiechers
 '''
 
 import pandas as pd
+import numpy as np
 import geopandas as gpd
 import matplotlib.pyplot as plt
 
@@ -14,7 +15,12 @@ ALL_DATA = 'data/full_zip.csv'
 
 def read_in(data):
     df = pd.read_csv(data)
+    df = df[df["total_population"]>4000]
+    df["ratio_per"] = (df["ratio"]/df["total_population"])*100000
+    df["pr_food_per"] = (df["pr_food"]/df["total_population"])*100000
+
     return df
+
 
 def gen_basemap(base_map, data, var):
     '''
@@ -33,27 +39,28 @@ def gen_basemap(base_map, data, var):
     return map
 
 
-def gen_layers(map, var, output_filename):
+def gen_layers(map, var, output_filename, threshold=500):
     '''
     Generates static map. Saves figure as png.
     '''
-
     fig, ax = plt.subplots(figsize=(15, 10))
     out_map = map.plot(ax=ax,
                column=var,
-               cmap='RdPu',
+               cmap='plasma_r',
                legend=True, 
                edgecolor='lightsteelblue', 
-               linewidth=0.3)
+               linewidth=0.3,
+               vmax=threshold)
+
     out_map.axis('off')
     out_map.set_title('Chicago COVID-19 Food Atlas', fontsize=20)
     plt.savefig(output_filename)
 
 def go():
     covid_map = gen_basemap(ZIP_BOUNDARIES, ALL_DATA, "death_rate_cumulative")
-    ratio_map = gen_basemap(ZIP_BOUNDARIES, ALL_DATA, "ratio")
-    predict_ratio_map = gen_basemap(ZIP_BOUNDARIES, ALL_DATA, "pr_food")
-    gen_layers(covid_map, "death_rate_cumulative", "COVID Death Rate.png")
-    gen_layers(ratio_map, "ratio", "Food Insecurity Ratio.png")
-    gen_layers(predict_ratio_map, "pr_food", "Predicted Food Insecurity Ratio.png")
+    ratio_map = gen_basemap(ZIP_BOUNDARIES, ALL_DATA, "ratio_per")
+    predict_ratio_map = gen_basemap(ZIP_BOUNDARIES, ALL_DATA, "pr_food_per")
+    gen_layers(covid_map, "death_rate_cumulative", "COVID Death Rate.png",310)
+    gen_layers(ratio_map, "ratio_per", "Food Insecurity Ratio.png", 40)
+    gen_layers(predict_ratio_map, "pr_food_per", "Predicted Food Insecurity Ratio.png", 40)
 
