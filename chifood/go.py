@@ -7,9 +7,11 @@ Sophia Mlawer, Mariel Wiechers, Valeria Balza, and Gabriela Palacios
 import covid
 import food_swamp
 import acs
-import food_banks
 import regress
 import gen_map
+import geopandas as gpd
+import food_banks
+
 
 def run():
     # Covid Data
@@ -19,10 +21,10 @@ def run():
     # ACS Data
     acs()
     # Combine together and run regression
-    full_data_by_zip = regress.model("food_swamp_data", "acs_data", "covid_data")
+    table_data, map_data = regress.model("data/food_swamp_zip", "acs/acs_data", "data/covid_data")
     # Food bank data
     food_banks()
-    # # Generate maps
+    # # # Generate maps
     gen_map()
 
 
