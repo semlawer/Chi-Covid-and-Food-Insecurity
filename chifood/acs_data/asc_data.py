@@ -83,7 +83,7 @@ def summarize_demographics(csv_file):
 
     extract = ['Geographic Area Name','SEX AND AGE!!Total population', 
                 'SEX AND AGE!!Total population!!Female',
-                'RACE!!Total population!!One race!!White',
+                'Race alone or in combination with one or more other races!!Total population!!White',
                 'RACE!!Total population!!One race!!Black or African American',
                 'HISPANIC OR LATINO AND RACE!!Total population!!Hispanic or Latino (of any race)']
     
