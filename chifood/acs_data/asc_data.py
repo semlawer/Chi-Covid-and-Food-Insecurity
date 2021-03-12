@@ -78,7 +78,7 @@ def summarize_demographics(csv_file):
     Returns:
         demo: panda dataframe with column data on race and gender.
     '''
-    build = ['ZCTA','total_population', 'perc_female', 'perc_white', 'perc_black',
+    build = ['ZCTA','total_population', 'perc_female', 'perc_non_white', 'perc_black',
             'perc_hispanic']
 
     extract = ['Geographic Area Name','SEX AND AGE!!Total population', 
@@ -95,6 +95,7 @@ def summarize_demographics(csv_file):
         if i > 1:
             demo[build[i]] = 100 * demo.loc[:, col]/demo.iloc[:, 1]
     demo = demo.set_index('ZCTA')
+    demo['perc_non_white'] = 100 - demo['perc_non_white']
 
     return demo
 
@@ -122,7 +123,7 @@ def summarize_household(csv_file):
     return homes
 
 
-def go(csv_demographics, csv_employment, csv_homes, csv_zips):
+def go(csv_demographic, csv_employment, csv_housing, csv_zips):
     '''
     Join all ACS data on ZCTA. 
 
@@ -137,7 +138,7 @@ def go(csv_demographics, csv_employment, csv_homes, csv_zips):
 
     demo = summarize_demographics(csv_demographics)
     employ = summarize_employment(csv_employment)
-    homes = summarize_household(csv_homes)
+    homes = summarize_household(csv_housing)
     zips = city_zips(csv_zips)
 
     acs_sub = pd.merge(demo, employ, how='inner', on='ZCTA')
