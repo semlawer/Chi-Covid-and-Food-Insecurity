@@ -70,7 +70,7 @@ def summarize_employment(csv_file):
 
 def summarize_demographics(csv_file):
     '''
-     Extracts desired data from demogrpahic data available from ACS surveys. 
+     Extracts desired data from demographic data available from ACS surveys. 
 
     Inputs:
         csv_file: downloaded from ACS website
@@ -136,7 +136,7 @@ def go(csv_demographic, csv_employment, csv_housing, csv_zips):
         sql: Creates an sql db for querying
     '''
 
-    demo = summarize_demographics(csv_demographics)
+    demo = summarize_demographics(csv_demographic)
     employ = summarize_employment(csv_employment)
     homes = summarize_household(csv_housing)
     zips = city_zips(csv_zips)
