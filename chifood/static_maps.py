@@ -56,12 +56,12 @@ def gen_layers(map, var, output_filename, color, name, threshold=500):
 
 def go():
     covid_map = gen_basemap(ZIP_BOUNDARIES, ALL_DATA, "death_rate_cumulative")
-    ratio_map = gen_basemap(ZIP_BOUNDARIES, ALL_DATA, "ratio_per")
-    predict_ratio_map = gen_basemap(ZIP_BOUNDARIES, ALL_DATA, "pr_food_per")
+    ratio_map = gen_basemap(ZIP_BOUNDARIES, ALL_DATA, "fs_ratio")
+    predict_ratio_map = gen_basemap(ZIP_BOUNDARIES, ALL_DATA, "pr_fs_ratio")
     gen_layers(covid_map, "death_rate_cumulative", "COVID Death Rate.png", 
             "Blues", 'Chicago COVID-19 Death Rates', 310)
-    gen_layers(ratio_map, "ratio_per", "Food Insecurity Ratio.png",
-            'plasma_r', 'Chicago Unhealthy to Healthy Food Ratio',  40)
-    gen_layers(predict_ratio_map, "pr_food_per", "Predicted Food Insecurity Ratio.png"
-            , 'plasma_r', 'Chicago Predicted Unhealthy to Healthy Food Ratio', 40)
+    gen_layers(ratio_map, "fs_ratio", "Food Insecurity Ratio.png",
+            'plasma_r', 'Chicago Unhealthy to Healthy Food Ratio',  20)
+    gen_layers(predict_ratio_map, "pr_fs_ratio", "Predicted Food Insecurity Ratio.png"
+            , 'plasma_r', 'Chicago Predicted Unhealthy to Healthy Food Ratio', 20)
 
