@@ -1,0 +1,181 @@
+<!doctype html>
+<html>
+{% load static %}
+{% load leaflet_tags %}
+
+  <head>
+   {{ script | safe }}
+
+    {% leaflet_js %}
+    {% leaflet_css %}
+    <title>Chicago C-19 and Food Banks</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'leaflet_layercontrol/leaflet.groupedlayercontrol.min.css' %}">
+    <script type="text/javascript" src="{% static 'dist/leaflet.ajax.js' %}"> </script>
+    <script type="text/javascript" src="{% static 'leaflet_layercontrol/leaflet.groupedlayercontrol.min.js' %}"> </script>
+    <style type="text/css">
+        #gis {width: 80%; height:700px;}
+    </style>
+  </head>
+  <body>
+
+    <h1>Food Insecurity and Covid Rates in Chicago</h1>
+ 
+    
+    <script type="text/javascript">
+        function getColor(d) {
+            return d > 300 ? '#800026' :
+                  d > 250  ? '#BD0026' :
+                  d > 200  ? '#E31A1C' :
+                  d > 150  ? '#FC4E2A' :
+                  d > 100   ? '#FD8D3C' :
+                  d > 50   ? '#FEB24C' :
+                  d > 0   ? '#FED976' :
+                              '#FFEDA0';
+        }
+
+        function getColor_food(d) {
+            return d > 8  ? '#d53e4f' :
+                  d > 6  ? '#fc8d59' :
+                  d > 4   ? '#fee08b' :
+                  d > 2   ? '#e6f598' :
+                  d > 0   ? '#99d594' :
+                            '#3288bd';
+        }
+
+
+        function style_fratio(feature) {
+            return {
+                fillColor: getColor_food(feature.properties.fs_ratio),
+                weight: 2,
+                opacity: 1,
+                color: 'white',
+                dashArray: '3',
+                fillOpacity: 0.7
+            };
+        }
+
+        function style_pr(feature) {
+            return {
+                fillColor: getColor_food(feature.properties.pr_fs_rati),
+                weight: 2,
+                opacity: 1,
+                color: 'white',
+                dashArray: '3',
+                fillOpacity: 0.7
+            };
+        }
+
+        function style(feature) {
+            return {
+                fillColor: getColor(feature.properties.death_rate),
+                weight: 2,
+                opacity: 1,
+                color: 'white',
+                dashArray: '3',
+                fillOpacity: 0.9
+            };
+        }
+
+
+        function our_layers(map, options){
+          var osm = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+              maxZoom: 19,
+              attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+            });
+		var OpenTopoMap = L.tileLayer('http://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
+              maxZoom: 17,
+              attribution: 'Map data: &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, <a href="http://viewfinderpanoramas.org">SRTM</a> | Map style: &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)'
+            });
+            var datasets = new L.GeoJSON.AJAX("{% url 'covid_food' %}",{
+                onEachFeature: function(feature,layer){
+                    layer.bindPopup(feature.properties.death_rate.toString());
+                }
+            });
+            var datasets_c = new L.GeoJSON.AJAX("{% url 'covid_food' %}", {style: style});
+            var datasets_food = new L.GeoJSON.AJAX("{% url 'covid_food' %}", {style: style_fratio});
+            var datasets_pr_food = new L.GeoJSON.AJAX("{% url 'covid_food' %}", {style: style_pr});
+
+            var points = new L.GeoJSON.AJAX("{% url 'foodbank' %}",{
+              onEachFeature: function(feature,layer){
+                    layer.bindPopup(feature.properties.address.toString());
+                }
+            });
+            
+            datasets_food.addTo(map);
+            datasets_pr_food.addTo(map);
+            datasets_c.addTo(map);
+            points.addTo(map);
+            // datasets.addTo(map);
+            
+
+            // layers
+
+            var baseLayers = {
+                "OSM": osm
+                // "OpenTopoMap":OpenTopoMap
+              }
+
+
+              var groupedOverlays = {
+                  "Layers": {
+                  "Covid": datasets_c,
+                  "Food_ratio": datasets_food,
+                  "Pr_food_insec": datasets_pr_food,
+                  "Food Banks": points
+                }
+
+              };
+
+            L.control.groupedLayers(baseLayers, groupedOverlays).addTo(map);
+
+          }
+  </script>
+  {% leaflet_map "gis" callback="window.our_layers" %}
+    <div class="frame">
+        <form method="get">
+            {% csrf_token %}
+            <table class="form">
+            {{ form }}
+            </table>
+            <input type="submit" value="Submit" />
+        </form>
+    </div>
+
+    {% if args %}
+    <div class="args">
+        <pre>{{ args }}</pre>
+    </div>
+    {% endif %}
+
+    {% if err %}
+    <div class="error">
+        {{ err|safe }}
+    </div>
+    {% endif %}
+
+
+
+    <div class="frame">
+        {% if result != None %}
+        <div class="results">
+            <table class="courses">
+                <tr>
+                    {% for col in columns %}
+                    <th>{{ col }}</th>
+                    {% endfor %}
+                </tr>
+                {% for entry in result %}
+                <tr>
+                    {% for col in entry %}
+                    <td>{{ col }}</td>
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+        <p class="num_results">Results: {{ num_results }}</p>
+        {% endif %}
+    </div>
+
+  </body>
+</html>
