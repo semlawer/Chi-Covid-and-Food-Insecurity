@@ -1,15 +1,17 @@
 '''
+CS122 Group Project: COVID-19 and Food Insecurity in Chicago
+Authors: Valeria Balza, Gabriela Palacios, Sophia Mlawer and Mariel Wiechers
+Contact: Valeria Balza
+
 This module collects COVID-19 death rate data from the City of Chicago
 Data Portal API
-
-Valeria Balza, Gabriela Palacios, Sophia Mlwawer and Mariel Wiechers
 '''
 
 import requests
 import json
 import pandas as pd
 
-OUTPUT_FILENAME = 'data/covid_data.csv'
+OUTPUT_FILENAME = 'output_data/covid_data.csv'
 DATA_URL = 'https://data.cityofchicago.org/resource/yhhz-zm2v.json' + '?'
 APP_TOKEN = 'LVyOCrPCoUZBEPkMulznMLC3Y'
 COLS = {'zip_code': str, 'week_number': int, 'death_rate_cumulative': float}
@@ -63,5 +65,6 @@ def process_data(covid_json):
 
     df = raw[raw['week_number']==latest_week].fillna(0).astype(COLS)
     df = df[['zip_code', 'death_rate_cumulative']].drop(df[df['zip_code']=='Unknown'].index)
+    df = df.rename(columns={'zip_code':'zipcode'})
 
     return df
