@@ -1,9 +1,16 @@
+'''
+CS122 Group Project: COVID-19 and Food Insecurity in Chicago
+Authors: Valeria Balza, Gabriela Palacios, Sophia Mlawer and Mariel Wiechers
+Contact: Mariel Wiechers
+
+This module collects and cleans data from the American Community Survey and
+exports the data as one CSV file
+'''
+
 import numpy as np
 import pandas as pd
 import os
 import re
-from sqlalchemy import create_engine
-import sqlite3
 
 
 def read_and_clean_data(csv_file):
@@ -154,7 +161,7 @@ def go(csv_demographic, csv_employment, csv_housing, csv_zips):
 
     acs.index.rename('zipcode', inplace=True)
 
-    acs_csv = acs.to_csv('acs_data.csv')
+    acs_csv = acs.to_csv('output_data/acs_data.csv')
 
 
 

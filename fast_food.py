@@ -1,10 +1,17 @@
+'''
+CS122 Group Project: COVID-19 and Food Insecurity in Chicago
+Authors: Valeria Balza, Gabriela Palacios, Sophia Mlawer and Mariel Wiechers
+Contact: Sophia Mlawer
+
+This module scrapes the main fast food restaurants in the United States
+from Wikipedia
+'''
 
 import bs4
 import requests
-#pip3 install fuzzywuzzy[speedup]
 
 
-start = "https://en.wikipedia.org/wiki/List_of_fast_food_restaurant_chains"
+# START = "https://en.wikipedia.org/wiki/List_of_fast_food_restaurant_chains"
 
 
 def read_in(website):
@@ -13,14 +20,15 @@ def read_in(website):
     Input: website
     Output: Beautiful Soup object of website
     '''
+
     request = requests.get(website)
-    #text = request.text.encode('iso-8859-1')
-    # request_text = get_request(website)
-    # text = read_request(request_text)
     soup = bs4.BeautifulSoup(request.content, "html.parser")
     return soup
 
+
 def scrape(soup):
+    '''
+    '''
     fast_food = []
     finder_block = soup.find("h5")
     list_food = finder_block.previousSibling.previousSibling
@@ -29,12 +37,15 @@ def scrape(soup):
     
     return fast_food
 
+
 def ff_by_zip(df):
     '''
     Collapses data by zip code and returns
     '''
+
     df["ZIP CODE"] = df["ZIP CODE"].astype("string")
     df[["zip_code", "zip_extra"]] = df["zip"].str.split(".", expand=True)
     collapse = df["zip_code"].value_counts()
     collapse.name = "fast_food"
+
     return collapse

@@ -1,5 +1,12 @@
+'''
+CS122 Group Project: COVID-19 and Food Insecurity in Chicago
+Authors: Valeria Balza, Gabriela Palacios, Sophia Mlawer and Mariel Wiechers
+Contact: Sophia Mlawer
 
-
+This module combines all the data together and calculates a regression
+predicting a food swamp measure given demographic and socioeconomic
+variables and returns data table.
+'''
 
 import pandas as pd
 import numpy as np
@@ -53,5 +60,5 @@ def model(food_swamp_data, acs_data, covid_data):
     table_data = regress_results[['zipcode', 'total_population', 'perc_black',
             'perc_minority','perc_hispanic','perc_unemployed', 'median_income',
             'perc_poverty','fs_ratio', 'pr_fs_ratio', 'death_rate_cumulative']]
-    regress_results.to_csv("data/full_zip.csv")
+
     return table_data, map_data

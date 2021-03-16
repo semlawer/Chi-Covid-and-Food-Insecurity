@@ -1,8 +1,10 @@
 '''
-This module collects City of Chicago data from the City of Chicago
-Data Portal API
+CS122 Group Project: COVID-19 and Food Insecurity in Chicago
+Authors: Valeria Balza, Gabriela Palacios, Sophia Mlawer and Mariel Wiechers
+Contact: Sophia Mlawer
 
-Valeria Balza, Gabriela Palacios, Sophia Mlawer and Mariel Wiechers
+This module retrieves data from the City of Chicago Data Portal on the
+active grocery stores in Chicago using an API
 '''
 
 import requests
@@ -44,8 +46,9 @@ def process_data(grocery_data):
     '''
     Returns a processed pandas dataframe
     '''
+
     raw = pd.DataFrame.from_dict(grocery_data)
-    raw.to_csv("data/grocery_store.csv")
+    raw.to_csv("output_data/grocery_store.csv")
     return raw
 
 
@@ -53,14 +56,18 @@ def grocery_by_zip(df):
     '''
     Collapses data by zip code and returns
     '''
+
     df[["zip_code", "zip_extra"]] = df["zip"].str.split("-", expand=True)
     collapse = df["zip_code"].value_counts()
     collapse.name = "grocery_store"
     return collapse
 
 
-def grocery_store(data_url, app_token):
-    build = build_request(data_url, app_token)
+def grocery_store():
+    '''
+    '''
+
+    build = build_request()
     data = get_request(build)
     df = process_data(data)
     by_zip = grocery_by_zip(df)

@@ -4,7 +4,7 @@ Authors: Valeria Balza, Gabriela Palacios, Sophia Mlawer and Mariel Wiechers
 Contact: Valeria Balza
 
 This module collects COVID-19 death rate data from the City of Chicago
-Data Portal API
+Data Portal API and exports the data as one CSV file
 '''
 
 import requests
