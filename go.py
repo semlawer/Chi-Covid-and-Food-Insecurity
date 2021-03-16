@@ -1,7 +1,8 @@
 '''
-This module manages all the sources of data. 
-
+CS122 Group Project: COVID-19 and Food Insecurity in Chicago
 Sophia Mlawer, Mariel Wiechers, Valeria Balza, and Gabriela Palacios 
+
+This module manages all the sources of data. 
 '''
 
 import covid

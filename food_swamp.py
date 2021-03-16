@@ -18,6 +18,15 @@ import grocery_store
 WEBSITE = "https://en.wikipedia.org/wiki/List_of_fast_food_restaurant_chains"
 CSV_FILE = "input_data/business_licenses.csv"
 
+def clean_food(food_swamp):
+    """
+    """
+    food_swamp = food_swamp[food_swamp["zip"] != "NAN"]
+    food_swamp["fs_ratio"] = (food_swamp["Chains"] + food_swamp["Fast Food"]+1)/(
+        food_swamp["grocery_store"]+1)
+    food = food_swamp.rename(columns={"zip":"zipcode"})
+    food = food.astype({"zipcode":int})
+    return food
 
 def go():
     '''
@@ -29,6 +38,7 @@ def go():
     groc = groc.rename(columns={"index":"zip"})
     merge = unhealthy_food.merge(groc, on="zip", how="outer")
     merge = merge.fillna(0)
-    merge.to_csv("output_data/food_swamp_zip.csv")
+    full_food = clean_food(merge)
+    full_food.to_csv("output_data/food_swamp_zip.csv")
 
     return merge

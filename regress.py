@@ -20,19 +20,10 @@ def read_in(datas):
     df = pd.read_csv(intro)
     return df
 
-def clean_food(food_swamp):
-    food_swamp = food_swamp[food_swamp["zip"] != "NAN"]
-    food_swamp["food_per"] = (food_swamp["Chains"] + food_swamp["Fast Food"]+1)/(
-        food_swamp["grocery_store"]+1)
-    food = food_swamp.rename(columns={"zip":"zipcode"})
-    food = food.drop(["Unnamed: 0"], axis = 1)
-    food = food.astype({"zipcode":int})
-    return food
-
 
 def regression(food, acs, covid):
     merge = acs.merge(food, on="zipcode", how="inner")
-    merge["fs_ratio"] = (merge["food_per"]/merge["total_population"])*100000
+    merge["fs_ratio"] = (merge["fs_ratio"]/merge["total_population"])*100000
     X = merge[["perc_black", "perc_hispanic" , "perc_unemployed", "perc_poverty",
         "perc_homeowners", "median_income"]]
     y = merge["fs_ratio"]
@@ -51,8 +42,7 @@ def model(food_swamp_data, acs_data, covid_data):
     acs = read_in(acs_data)
     covid = read_in(covid_data)
     covid = covid.rename(columns={"zip_code":"zipcode"})
-    food = clean_food(food_swamp)
-    regress_results = regression(food, acs, covid)
+    regress_results = regression(food_swamp, acs, covid)
     regress_results = regress_results.rename(columns={"perc_non_white":"perc_minority"})
 
     map_data = regress_results[['zipcode', 'fs_ratio', 'pr_fs_ratio', 
