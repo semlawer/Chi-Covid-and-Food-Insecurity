@@ -155,12 +155,6 @@ def go(csv_demographic, csv_employment, csv_housing, csv_zips):
     acs.index.rename('zipcode', inplace=True)
 
     acs_csv = acs.to_csv('acs_data.csv')
-    
-    engine = create_engine('sqlite:///acs_data.sqlite3', echo = False)
-    connection = engine.connect()
-    acs.to_sql('acs', con = engine, index = True)
-
-    return acs
 
 
 

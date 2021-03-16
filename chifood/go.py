@@ -19,7 +19,7 @@ def run():
     # Food Swamp Data
     food_swamp.food_swamp()
     # ACS Data
-    acs()
+    acs.go()
     # Combine together and run regression
     table_data, map_data = regress.model("data/food_swamp_zip", "acs/acs_data", "data/covid_data")
     # Food bank data

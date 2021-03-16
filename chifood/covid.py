@@ -1,5 +1,5 @@
 '''
-This module collects City of Chicago data from the City of Chicago
+This module collects COVID-19 death rate data from the City of Chicago
 Data Portal API
 
 Valeria Balza, Gabriela Palacios, Sophia Mlwawer and Mariel Wiechers
