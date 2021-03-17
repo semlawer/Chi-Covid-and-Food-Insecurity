@@ -57,6 +57,8 @@ if [[ -d env ]]; then
             echo -e "    --Could not create virtual environment...Please make sure venv is installed"
             exit 1
         fi
+    else
+        source env/bin/activate
     fi
 else
     $PYTHON -m venv env
