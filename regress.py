@@ -16,22 +16,25 @@ from sklearn.metrics import r2_score
 from sklearn.impute import SimpleImputer
 
 def read_in(datas):
+    '''
+    '''
     intro = "{}.csv".format(datas)
     df = pd.read_csv(intro)
     return df
 
 
 def regression(food, acs, covid):
+    '''
+    '''
     merge = acs.merge(food, on="zipcode", how="inner")
-    merge["fs_ratio"] = (merge["fs_ratio"]/merge["total_population"])*100000
     X = merge[["perc_black", "perc_hispanic" , "perc_unemployed", "perc_poverty",
         "perc_homeowners", "median_income"]]
     y = merge["fs_ratio"]
     reg = LinearRegression().fit(X, y)
     predict_food = reg.predict(X)
-    print(merge.columns)
     score = reg.score(X,y)
     merge["pr_fs_ratio"] = predict_food
+    print(merge)
     merge_full = merge.merge(food, on =["zipcode", "Chains", "Fast Food", "grocery_store", "fs_ratio"], how="outer")
     merge_full = merge_full.merge(covid, on="zipcode", how="outer").round(2)
     return merge_full
