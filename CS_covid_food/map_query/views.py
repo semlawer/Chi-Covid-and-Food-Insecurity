@@ -109,7 +109,7 @@ class SearchForm(forms.Form):
         widget=RANGE_WIDGET,
         required=False)
     fs_ratio = Range(
-        label='Food Swamp Ratio',
+        label='Food Swamp Ratio (unhealthy-to-healthy establishments ratio)',
         help_text='between 0.0 (min) and 61.0 (max)',
         widget=RANGE_WIDGET,
         required=False)
