@@ -104,13 +104,13 @@ class SearchForm(forms.Form):
                                         choices=ZIPS,
                                         required=False)
     death_rate_cumulative = Range(
-        label='COVID-19 Death Rates (lower/upper)',
-        help_text='between 0.0 and 308.5',
+        label='COVID-19 Death Rates (per 100,000 people)',
+        help_text='between 0.0 (min) and 308.5(max)',
         widget=RANGE_WIDGET,
         required=False)
     fs_ratio = Range(
-        label='Food Swamp Ratio (lower/upper)',
-        help_text='between 0.0 and 61.0',
+        label='Food Swamp Ratio',
+        help_text='between 0.0 (min) and 61.0 (max)',
         widget=RANGE_WIDGET,
         required=False)
     show_args = forms.BooleanField(label='Show args_to_ui',
