@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
+
 from pathlib import Path
 import os
 
@@ -80,10 +81,9 @@ WSGI_APPLICATION = 'CS_covid_food.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.contrib.gis.db.backends.postgis',
-        'NAME': 'db_chif_proj',
-        'USER': 'project_cs',
+        'NAME': 'db_chifood_proj',
+        'USER': 'cs_project',
         'HOST': 'localhost',
-        'PASSWORD': 'capp',
         'PORT': '5432'
     }
 }
