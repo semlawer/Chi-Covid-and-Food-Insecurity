@@ -23,8 +23,10 @@ class CovidFood(models.Model):
 
 class FoodBanks(models.Model):
     address = models.CharField(max_length=80)
+    category = models.CharField(max_length=80, default="Null")
+    location_i = models.BigIntegerField(default=1)
     name = models.CharField(max_length=80)
-    zip_code = models.CharField(max_length=80)
+    zip_code = models.BigIntegerField()
     lat = models.FloatField()
     lon = models.FloatField()
     geom = models.PointField(srid=4326)

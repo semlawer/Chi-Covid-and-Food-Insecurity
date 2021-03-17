@@ -6,6 +6,8 @@ from .models import FoodBanks
 # Auto-generated `LayerMapping` dictionary for FoodBanks model
 foodbanks_mapping = {
     'address': 'address',
+    'category': 'category',
+    'location_i': 'location_i',
     'name': 'name',
     'zip_code': 'zip_code',
     'lat': 'lat',
