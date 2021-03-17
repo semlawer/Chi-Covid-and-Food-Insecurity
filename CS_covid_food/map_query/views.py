@@ -105,7 +105,7 @@ class SearchForm(forms.Form):
                                         required=False)
     death_rate_cumulative = Range(
         label='COVID-19 Death Rates (per 100,000 people)',
-        help_text='between 0.0 (min) and 308.5(max)',
+        help_text='between 0.0 (min) and 308.5 (max)',
         widget=RANGE_WIDGET,
         required=False)
     fs_ratio = Range(
