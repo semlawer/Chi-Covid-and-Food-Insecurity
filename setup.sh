@@ -50,6 +50,9 @@ if [[ -d env ]]; then
             exit 1
         fi
     fi
+
+else
+    $PYTHON -m venv env
 fi
 
 # 4. Install Requirements 
