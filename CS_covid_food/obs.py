@@ -8,8 +8,8 @@ import os
 DATA_DIR = os.path.dirname(__file__)
 DATABASE_FILENAME = os.path.join(DATA_DIR, 'chifood.sqlite3')
 SELECT_CLAUSE = '''SELECT data.zipcode, data.death_rate_cumulative,
-                   data.fs_ratio, data.pr_food_ins, data.total_pop,
-                   data.perc_black, data.perc_hisp, data.perc_unempl,
+                   data.fs_ratio, data.pr_fs_ratio, data.total_population,
+                   data.perc_black, data.perc_hispanic, data.perc_unemployed,
                    data.median_income, data.perc_poverty'''
 FROM_CLAUSE = '''FROM data'''
 

@@ -19,14 +19,14 @@ NOPREF_STR = 'No preference'
 RES_DIR = os.path.join(os.path.dirname(__file__), '..', 'res')
 COLUMN_NAMES = dict(
     zipcode='ZIP Code',
-    total_pop='Population (Total)',
+    total_population='Population (Total)',
     perc_black='Population (% Black)',
-    perc_hisp='Population (% Hispanic)',
-    perc_unempl='Population (% Unemployed)',
+    perc_hispanic='Population (% Hispanic)',
+    perc_unemployed='Population (% Unemployed)',
     median_income='Median Income',
     perc_poverty='Population (% Poverty)',
     fs_ratio='Food Swamp Ratio',
-    pr_food_ins='Predicted Food Insecurity',
+    pr_fs_ratio='Predicted Food Insecurity',
     death_rate_cumulative="COVID-19 Death Rate"
 )
 
