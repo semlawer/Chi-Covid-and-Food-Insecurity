@@ -11,9 +11,6 @@ import bs4
 import requests
 
 
-# START = "https://en.wikipedia.org/wiki/List_of_fast_food_restaurant_chains"
-
-
 def read_in(website):
     '''
     This function reads in the website if it's a website of interest
@@ -28,6 +25,8 @@ def read_in(website):
 
 def scrape(soup):
     '''
+    This function scrapes through the website to extract American 
+    fast food information.
     '''
     fast_food = []
     finder_block = soup.find("h5")

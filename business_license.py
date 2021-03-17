@@ -3,15 +3,14 @@ CS122 Group Project: COVID-19 and Food Insecurity in Chicago
 Authors: Valeria Balza, Gabriela Palacios, Sophia Mlawer and Mariel Wiechers
 Contact: Sophia Mlawer
 
-This module compares fast food restaurants in Chicago to national chains. Please note
-this module uses code from the following site:
+This module compares fast food restaurants in Chicago to national chains. Please 
+note part of this module was inspired by:
     https://stackoverflow.com/questions/13636848/is-it-possible-to-do-fuzzy-match-merge-with-python-pandas
 '''
 
 import json
 import requests
 import os
-# import csv
 import re
 import pandas as pd
 from fuzzywuzzy import fuzz
@@ -21,15 +20,17 @@ import fast_food
 
 def read_data(csv_file):
     '''
+    Reads csv file and outputs a CSV
     '''
 
-    data1 = pd.read_csv(csv_file)
+    data = pd.read_csv(csv_file)
 
-    return data1
+    return data
 
 
 def clean_bus(data):
     '''
+    Cleans the data and standardizes format
     '''
 
     name_zip = data[["LEGAL NAME", "DOING BUSINESS AS NAME", "ZIP CODE", "LOCATION"]]
@@ -42,6 +43,9 @@ def clean_bus(data):
 
 def dollar_chains():
     '''
+    This creates a list of the main variety stores where residents
+    buy food that are traditionally cheaper, unhealthier, and with less options
+    than a grocery store.
     '''
 
     list_dollar = ["WALGREENS", "CVS", "7 ELEVEN", "DOLLAR TREE", "FAMILY DOLLAR", "DOLLAR GENERAL"]
@@ -53,6 +57,8 @@ def dollar_chains():
 
 def read_in_ff(website):
     '''
+    Performs the fast_food.py web scraping, cleans the data, and combines it
+    with the list of chain variety stores.
     '''
 
     ff = fast_food.read_in(website)
@@ -71,10 +77,17 @@ def read_in_ff(website):
 
 
 def fuzzy_match_names(df_1, df_2, key1, key2, threshold, limit):
+    '''
+    Merges the business license food store names with the list of fast food
+    restaurants and performs a fuzzy match between the two. If the match chance
+    is higher than the set threshold, then it is considered a name match.
+    Keeps only the business license information for the records that match.
+    '''
     s = df_2[key2].tolist()
     m = df_1[key1].apply(lambda x: process.extract(x, s, limit=limit))    
     df_1['matches'] = m
-    m2 = df_1['matches'].apply(lambda x: ', '.join([i[0] for i in x if i[1] >= threshold]))
+    m2 = df_1['matches'].apply(lambda x: ', '.join([i[0] for i in x if i[1] >= 
+        threshold]))
     df_1['matches'] = m2
     fast_food_match = df_1[df_1["matches"].astype(bool)]
     merge = fast_food_match.merge(df_2, left_on="matches", right_on=key2)
@@ -99,6 +112,7 @@ def ff_by_zip(df):
 
 def business_license(website, csv_file):
     '''
+    Runs the above functions in the proper order
     '''
 
     data = read_data(csv_file)

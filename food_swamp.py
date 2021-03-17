@@ -20,6 +20,8 @@ CSV_FILE = "input_data/business_licenses.csv"
 
 def clean_food(food_swamp):
     """
+    This function cleans the food data and standardizes it. Creates the ratio
+    of unhealthy to healthy food.
     """
     food_swamp = food_swamp[food_swamp["zip"] != "NAN"]
     food_swamp["fs_ratio"] = (food_swamp["Chains"] + food_swamp["Fast Food"]+1)/(
@@ -30,6 +32,8 @@ def clean_food(food_swamp):
 
 def go():
     '''
+    This function combines all the sources of food data together
+    and outputs a single CSV of the food measures by zip code.
     '''
 
     grocery = grocery_store.grocery_store()
