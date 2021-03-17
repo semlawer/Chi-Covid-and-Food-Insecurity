@@ -33,12 +33,12 @@ def run():
     table_data.to_pickle('output_data/table_data.pkl')
     map_data.to_pickle('output_data/map_data.pkl')
 
-    # # Food bank data
-    # food_banks()
-    # # # # Generate maps
-    # gen_map()
-    
-    # create_databases.gen_sqlite()
+    # # Saves food_banks.csv to output_data folder
+    # food_banks = food_banks.go()
+
+    # # Creates databases and saves them to Django directory 
+    # create_databases.gen_sqlite(table_data)
+    # create_databases.gen_shapefiles(map_data, food_banks)
 
 
 if __name__ == "__main__":
