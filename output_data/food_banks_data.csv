@@ -1,0 +1,219 @@
+address,category,location_id,name,zip_code,lat,lon
+"1910 S Kedzie Ave, Chicago, IL 60623",mobile-pantry,8783,Worship Warming Center,60623,41.8550203,-87.7056029
+"6131 N Newark Ave, Chicago, IL 60631, USA",pantry,8782,Windy City Community Church,60631,41.9864475,-87.796099
+"2619 E 76th St, Chicago, IL 60649",pantry,8781,Windsor Park Lutheran Church,60649,41.7570786,-87.56067870393883
+"5816 W Division St, Chicago, IL 60651",soup-kitchen,8776,Westside Health Authority,60651,41.9024758,-87.7386021
+"1538 W 69th St, Chicago, IL 60636",pantry,8773,We Do Care,60636,41.76874455,-87.6630469774328
+"6601 N Western Ave, Chicago, IL 60645",produce-mobile,8772,Warren Park Produce Program Formerly Rogers Park PM,60645,42.001493,-87.68987
+"843 W Garfield Blvd, Chicago, IL 60621",pantry,8771,Visitation Parish Food Pantry,60621,41.793593599999994,-87.64726100138017
+"1545 W Morse Ave, Chicago, IL 60626",soup-kitchen,8765,United Church of Rogers Park,60626,42.00778200613258,-87.6684793702909
+"1818 W 74th St, Chicago, IL 60636",pantry,8762,Uncle Shack Food Blessing,60636,41.7595418,-87.66940610781586
+"20 S Campbell Ave, Chicago, IL 60612",pantry,8758,TSA: Midwest Corps Pantry,60612,41.880926674424636,-87.688745
+"5036 W 47th St, Chicago, IL 60638",pantry,8757,TSA: Midway Citadel,60638,41.80784945,-87.74980370999793
+"5020 N Pulaski Rd, Chicago, IL 60641, USA",pantry,8754,TSA: Mayfair Food Pantry,60630,41.9693225,-87.7280622
+"3621 W 24th St, Chicago, IL 60623",pantry,8756,TSA: La Villita Corps,60623,41.84794218081924,-87.71571957142422
+"825 N Christiana Ave, Chicago, IL 60651, USA",pantry,21319,TSA: Harbor Light,60651,41.89583145,-87.7093506
+"845 W 69th St, Chicago, IL 60621, USA",pantry,8752,TSA: Englewood Red Shield Cent,60621,41.76859515,-87.64623984942423
+"1 N Ogden Ave, Chicago, IL 60607",pantry,8750,TSA: Chicago Temple,60607,41.8840513,-87.6634648
+"5950 S Spaulding Ave, Chicago, IL 60629",pantry,8749,TSA: Chicago Lawn,60629,41.78506841391608,-87.70584275106619
+"9046 S Mackinaw Ave, Chicago, IL 60617",pantry,8743,Trinity Resurrection United,60617,41.73137624018092,-87.54303673462908
+"1415 W 104th St, Chicago, IL 60643",pantry,8741,TRCDO Harvest for the World,60643,41.704641499999994,-87.65814959522226
+"1510 W 95th St, Chicago, IL 60643, USA",pantry,8736,Third Baptist Church of Chicago,60643,41.721366,-87.66100233333333
+"11705 S Elizabeth St, Chicago, IL 60643",soup-kitchen,8735,The Seeds Center of Maple Park,60643,41.68111234309528,-87.65286487137763
+"4850 N Sawyer Ave, Chicago, IL 60625",pantry,8733,The Holy Order of Cherubim and Seraphim Movement,60625,41.969943900000004,-87.7101176163302
+"2711 W Lawrence Ave, Chicago, IL 60625, USA",pantry,8552,The Friendship Center,60625,41.96835255,-87.69681678917675
+"8600 South Kilpatrick Avenue, Chicago, IL 60652, USA",pantry,19531,The Church of Pentocost USA INC.,60652,41.7360487,-87.73883688616132
+"4130 S Indiana Ave, Chicago, IL 60653",pantry,8727,Tabernacle MBC Food Pantry,60653,41.8191855,-87.62178137920193
+"1010 W Webster Ave, Chicago, IL 60614, USA",pantry,8726,SVDP: Parish Food Pantry,60614,41.9222041,-87.65390949028962
+"5533 S Sawyer Ave, Chicago, IL 60629",pantry,8725,SVDP: District IX Food Pantry,60629,41.7931408,-87.70404840288461
+"2145 N Halsted St , Chicago, IL 60614",pantry,8724,SVDP: Center Food Pantry,60614,41.921406399999995,-87.64803992427716
+"500 W 119th St, Chicago, IL 60628",pantry,8721,Straford Memorial Church,60628,41.6779185,-87.6322686
+"4827 N Kenmore Ave, Chicago, IL 60640","pantry,soup-kitchen",8718,St. Thomas of Canterbury,60640,41.96997495,-87.65585615327599
+"1950 N Kenmore Ave, Chicago, IL 60614",soup-kitchen,8717,St. Teresa of Avila Parish,60614,41.91751455,-87.65466520774787
+"1950 N Kenmore Ave , Chicago, IL 60614",pantry,8716,St. Teresa Food Pantry,60614,41.91751455,-87.65466520774787
+"2915 W Palmer St, Chicago, IL 60647, USA",pantry,8715,St. Sylvester Parish,60647,41.9214635,-87.70072060797423
+"3042 W Washington Blvd, Chicago, IL 60612",soup-kitchen,8714,St. Stephen AME Church,60612,41.88340205,-87.70311402361496
+"1120 W 79th St, Chicago, IL 60620",pantry,8713,St. Sabina Parish,60620,41.7507184,-87.6518072
+"1919 S Ashland Ave, Chicago, IL 60608",soup-kitchen,8711,St. Pius Parish Pantry SK,60608,41.855516,-87.6551903731846
+"2132 E 72nd St, Chicago, IL 60649",pantry,8709,St. Philip Neri Lady of Peace,60649,41.7648151,-87.57209834392248
+"1000 N Orleans St , Chicago, IL 60610",pantry,8708,St. Matthew Child Advocate,60610,41.900890399999994,-87.63764236600912
+"5112 W Washington Blvd, Chicago, IL 60644",pantry,8705,St. Martin de Porres,60644,41.8820236,-87.75327883312154
+"1048 N Campbell Ave, Chicago, IL 60622",pantry,8704,St. Mark Church Food Pantry,60622,41.900899,-87.65091651967884
+"2248 W Washington St, Chicago, IL 60612",mobile-pantry,8702,St. Malachy Church,60612,41.882949,-87.6596895
+"10509 S Torrence Ave, Chicago, IL 60617",mobile-pantry,8701,St. Kevin Food Pantry,60617,41.70419325,-87.55921827206944
+"2442 W Moffat St, Chicago, IL 60647",pantry,8700,St. John UC Food Pantry,60647,41.91507885,-87.68902089489802
+"5212 W Agatite Ave, Chicago, IL 60630, USA",pantry,8699,St. John Lutheran Church Our Lady of Victory,60641,41.96178265,-87.75826777279974
+"900 S Sacramento Blvd, Chicago, IL 60612",pantry,8698,St. James Unity Baptist Church,60612,41.8698337,-87.70110220975596
+"2907 S Wabash Ave, Chicago, IL 60616",mobile-pantry,8697,St. James Food Pantry,60616,41.8414183,-87.6247463901189
+"2907 S Wabash Ave, Chicago, IL 60616",pantry,8696,St. James Catholic Church,60616,41.8414183,-87.6247463901189
+"6559 N Glenwood Ave , Chicago, IL 60626",pantry,8693,St. Ignatius Parish,60626,42.0016772,-87.665031458347
+"932 N Kostner Ave, Chicago, IL 60651",pantry,8691,St. Francis of Assisi Parish,60651,41.9038757,-87.7361835
+"13115 South Houston Avenue, Chicago, IL, USA",pantry,8689,St. Florian: SVDP Food Pantry,60633,41.65698914108998,-87.548259
+"50 E 41st St, Chicago, IL 60653","mobile-pantry,pantry",8687,St. Elizabeth Church SVDP,60653,41.8203393,-87.624448
+"6535 W Irving Park Rd, Chicago, IL 60634",pantry,8685,St. Cyprian Food Pantry,60634,41.95276928212168,-87.79035704755115
+"5205 N Lieb Ave Chicago IL, 60630",pantry,77443,St. Cornelius Food Pantry,60630,41.97589605,-87.76430517132684
+"331 E 71st St, Chicago, IL 60619",pantry,8684,St. Columbanus,60619,41.765191400000006,-87.6171789067269
+"1510 N Claremont Ave, Chicago, IL 60622",pantry,8679,St. Aloysius Church,60622,41.9085285,-87.686064
+"3147 W Douglas Blvd, Chicago, IL 60623",pantry,8677,St. Agathas Food Pantry,60623,41.8622995,-87.7049363
+"6117 S Kedzie Ave, Chicago, IL 60629",older-adult-choice-market,8789,Southwest Senior Center,60629,41.7821238,-87.70292979999999
+"11401 S Green Bay Ave, Chicago, IL 60617, USA","mobile-pantry,pantry",37161,Southeast Side of Chicago Food Pantry,60617,41.688053,-87.541203
+"7000 S Michigan Ave, Chicago, IL 60637","pantry,produce-mobile",8672,Shiloh SDA Dorcas Society,60637,41.767274,-87.621848
+"9201 S Justine St, Chicago, IL 60620",pantry,8671,Shiloah Baptist Church,60620,41.726578,-87.661475
+"838 West Marquette Road, Chicago, IL, USA","pantry,soup-kitchen",8668,Shepherd’s Hope,60621,41.7728846,-87.6462530324153
+"11301 S Halsted St, Chicago, IL 60628, United States",pantry,8667,Sheldon Heights COC Pantry,60628,41.695272,-87.6425266
+"13800 S Wabash Ave, Riverdale, IL 60827",produce-mobile,8666,Shekinah Chapel,60827,41.6457475,-87.6201545
+"424 E 49th St, Chicago, IL 60615",soup-kitchen,8663,Second Faith Temple C.O.G.I.C.,60615,41.80597995,-87.61517932596624
+"528 N Ada St, Chicago, IL 60642",pantry,8658,Santa Maria Adolorata,60642,41.9125365,-87.6623445
+"6248 S Spaulding Ave, Chicago, IL 60629, USA",pantry,8657,Sanad Organization,60629,41.7791756,-87.70582005226642
+"1936 W 48th St, Chicago, IL 60609, USA",mobile-pantry,50552,San Miguel School,60609,41.8069572,-87.67379522592469
+"1439 N Sacramento Ave, Chicago, IL 60622",produce-mobile,8656,San Lucas UCC,60622,41.9010603,-87.7017861
+"10858 S Michigan Ave, Chicago, IL 60628",pantry,8653,Roseland Christian Min. PY,60628,41.696489400000004,-87.62117043727713
+"11801 S Sangamon St, Chicago, IL 60643",pantry,8646,Redeeming Grace Food Pantry,60643,41.679435749999996,-87.6453265669751
+"4332 N Paulina St, Chicago, IL 60613",mobile-pantry,8644,Ravenswood Community Services Ravenswood School,60613,41.9609845,-87.67129179663
+"1757 W Wilson Ave, Chicago, IL 60640",soup-kitchen,8643,Ravenswood Community Serv. SK c/o All Saints Episcopal Church,60640,41.96510067514641,-87.67305836011485
+"1757 W Wilson Ave, Chicago, IL 60640",pantry,8642,Ravenswood Community Serv. PY c/o All Saints Episcopal Church,60640,41.96510067514641,-87.67305836011485
+"1351 W Evergreen Ave , Chicago, IL 60642",soup-kitchen,8640,Providence Soup Kitchen St. Stanislaus Kostka,60642,41.9062061,-87.6603317
+"1015 N Pine Ave, Chicago, IL 60651",pantry,8636,Pine Avenue United Church,60651,41.8991573,-87.763529079884
+"2319 S Damen Ave, Chicago, IL 60608, USA",pantry,8635,Pilsen Little Village CMHC II,60608,41.8523223,-87.6758503
+"1850 S Throop St, Chicago, IL 60608, USA",pantry,20754,Pilsen Food Pantry,60608,41.8564146,-87.65906678175136
+"1901 W Washington Blvd , Chicago, IL 60612",pantry,8633,Pilgrim Rest M.B.C.,60612,41.88295455,-87.6744971761637
+"5659 S Union Ave, Chicago, IL 60621",pantry,8632,Pickens Memorial Temple COGIC,60621,41.7909246,-87.64227485281947
+"3570 W 5th Ave, Chicago, IL 60624",produce-mobile,8629,Peoples Church of the Harvest,60624,41.87584716806613,-87.71543382433369
+"3814 West Iowa Street, Chicago, IL, USA",mobile-pantry,8623,Our Lady of the Angels,60651,41.897585,-87.7221717
+"3047 W Cermak Rd , Chicago, IL 60623",pantry,8622,Our Lady of Tepeyac Parish,60623,41.8515412,-87.70222710163247
+"2751 West 38th Place, Chicago, IL 60632, USA",mobile-pantry,46027,Our Lady of Fatima,60632,41.82347115,-87.69431412280466
+"13750 S Leyden Ave, Chicago, IL 60827, United States",pantry,17858,Ordained of God Full Gospel Church,60827,41.6454224,-87.6160415073234
+"2050 W 59th St, Chicago, IL 60636",mobile-pantry,8617,Operation Blessing Evening Star,60636,41.78702185,-87.67627704740397
+"2649 N Francisco Ave, Chicago, IL 60647",pantry,8452,Open Arms Ministry,60647,41.930181700000006,-87.69971157833334
+"2805 N Linder Ave, Chicago, IL 60641",pantry,8615,Onward House,60641,41.931643,-87.763691
+"1400 W Augusta Blvd, Chicago, IL 60622",pantry,8610,Northwestern Settlement Hse FP,60622,41.899857,-87.66327
+"3160 N Milwaukee Ave, Chicago, IL 60618",older-adult-choice-market,8790,Northwest Senior Center,60618,41.938157000000004,-87.72281057396506
+"4602 N Kilbourn Ave, Chicago, IL 60630",pantry,8608,Northwest Church of Christ,60630,41.9646192,-87.74187889096386
+"5220 N California Ave, Chicago, IL 60625",pantry,8606,North Shore SDA Church,60625,41.9386993,-87.6977997
+"10413 S Michigan Ave, Chicago, IL 60628",pantry,8602,New Tabernacle Baptist Church,60628,41.70496646019434,-87.62042430590914
+"4716 N Malden St, Chicago, IL 60640",pantry,8601,New Seed Pantry,60640,41.9677167,-87.66309013054635
+"9406 S Perry Ave, Chicago, IL 60620",pantry,8600,New Progressive Missionary Baptist Church,60620,41.723222449999994,-87.6266596257814
+"206-210 South Hamlin Boulevard, Chicago, IL, USA",pantry,8597,New Morning Star MBC Pantry,60624,41.877876514091895,-87.720839589789
+"7757 S Greenwood Ave, Chicago, IL 60619",pantry,8593,New Life Covenant Church Southeast,60619,41.75335635,-87.59762269728697
+"5101 S Keeler Ave, Chicago, IL 60632, USA",mobile-pantry,44201,New Life Community Church – Midway,60632,41.8187536,-87.7282386
+"3729 W Leland Ave, Chicago, IL, USA",mobile-pantry,44624,New Life Community Church – Albany Park,60625,41.9661647,-87.72183657941427
+"2657 South Lawndale Avenue, Chicago, IL, USA",mobile-pantry,44338,New Life Centers of Chicagoland – Little Village Lawndale,60623,41.84332109506564,-87.71708824028543
+"2759 South Karlov Avenue, Chicago, IL, USA",mobile-pantry,44339,New Life Centers of Chicagoland – Lawndale Karlov site,60623,41.8407399,-87.7264953
+"1410 North Springfield Avenue, Chicago, IL, USA",mobile-pantry,44340,New Life Centers of Chicagoland – Humboldt Park,60651,41.90656545,-87.72422621171894
+"7625 S Halsted St, Chicago, IL 60620",pantry,8591,New Joy Divine,60620,41.7553402,-87.64383225
+"7115 W Hood Ave, Chicago, IL 60631",pantry,8590,New Hope United Methodist,60631,41.99224059619602,-87.80437530138751
+"1818 N Kostner Ave, Chicago, IL 60639, USA",soup-kitchen,22454,New Hope Bible Church,60639,41.91400567218778,-87.73634757662457
+"8700 S Emerald Ave, Chicago, IL 60620",pantry,8588,New Gresham,60620,41.735749,-87.6425
+"715 West 51st Street, Chicago, IL 60609, USA",pantry,19958,New Eclipse Community Alliance,60609,41.8013618,-87.6436630068882
+"11600 S State St, Chicago, IL 60628",pantry,8584,New Christian Joy Full Gospel Baptist Church,60628,41.68242075,-87.62334521750066
+"8850 S Cottage Grove Ave, Chicago, IL 60619",pantry,8583,New Bethlehem #4 MBC Pantry,60619,41.73335055,-87.60529544528899
+"7351 S Stony Island Ave, Chicago, IL 60649",produce-mobile,8582,Muhammad Univ of Islam Pantry,60649,41.7609098,-87.58501753798146
+"6353 S Marshfield Ave, Chicago, IL 60636",pantry,8576,Mount Olive Baptist Church,60636,41.777805650000005,-87.6650739294611
+"3814 West Iowa Street, Chicago, IL 60651, United States",pantry,8573,Mission of Our Lady of the Angels,60651,41.897585,-87.7221717
+"8255 S Dante Ave, Chicago, IL 60619",pantry,8565,Messiah/St. Bartholomew,60619,41.7443261,-87.5889024
+"3728 S Indiana Ave, Chicago, IL 60653",soup-kitchen,8561,Matthew House Soup Kitchen,60653,41.826656111111106,-87.62177466666667
+"2859 W Jackson Blvd, Chicago, IL 60612",pantry,8559,Marillac House Food Pantry,60612,41.8775485,-87.6858605
+"11030 S Longwood Dr, Chicago, IL 60643",pantry,8558,Maple Morgan Park Food Pantry,60643,41.693538450000005,-87.6719104633398
+"11021 South Ashland Avenue, Chicago, IL 60643, USA",pantry,8557,Manna Food Pantry,60643,41.6933675,-87.66148508395571
+"11636 S Halsted St, Chicago, IL 60628",pantry,8551,Lights of Zion Church,60628,41.682405349999996,-87.64343997177642
+"2019 W Lawrence Ave, Chicago, IL 60625",older-adult-choice-market,8788,Levy Senior Center,60625,41.968459100000004,-87.68001827617951
+"3533 West North Avenue, Chicago, IL, USA",pantry,27575,La Casa Norte’s Fresh Market,60647,41.9097895,-87.71557810414882
+"7541 South Halsted Street, Chicago, IL, USA",pantry,19007,Koinonia Ministry,60620,41.75666485,-87.64386442333716
+"119 E Garfield Blvd, Chicago, IL 60637",mobile-pantry,8540,KLEO Community Family Life,60637,41.794447,-87.6149514
+"1648 W 63rd St, Chicago, IL 60636",pantry,8539,Kingdom Builders Christian Cen,60636,41.7796212,-87.6544933
+"301 N Central Ave, Chicago, IL 60644",pantry,8538,Kingdom Baptist Church,60644,41.8859566,-87.76460468020873
+"2314 E 83rd St, Chicago, IL 60617",produce-mobile,8537,King of Glory Tabernacle COGIC,60617,41.744519493956645,-87.56795149018292
+"4608 South Greenwood Avenue, Chicago, IL, USA",soup-kitchen,19922,Kenwood UCC Soup Kitchen,60653,41.811043,-87.59995462505071
+"4242 S Cottage Grove Ave, Chicago, IL 60653",pantry,8535,Kenwood Oakland Community Org,60653,41.8241518,-87.6070128
+"4224 W 13th St, Chicago, IL 60623",pantry,8531,Jireh Food Pantry,60623,41.864414499999995,-87.73103078554239
+"3500 W 63rd Pl, Chicago, IL 60629",pantry,8529,Jesus Christ Food Pantry,60629,41.7780886,-87.7106081
+"4256 N Ridgeway Ave, Chicago, IL 60618, USA",pantry,8527,Irving Park Community Food Pantry,60641,41.9590351,-87.72197739437823
+"2520 South Western Avenue, Chicago, IL, USA",mobile-pantry,46890,Instituto del Progresso Latino,60608,41.845661899999996,-87.68586219936141
+"7445 S South Chicago Ave, Chicago, IL 60619","mobile-pantry,pantry",8525,Inner-City Missions Network,60619,41.759808066916456,-87.5969735621082
+"7877 S Coles Ave, Chicago, IL 60649",mobile-pantry,8522,Impact Ministry/Christ Bible Church,60649,41.752452250000005,-87.55042706223674
+"2745 West 44th Street, Chicago, IL, United States","mobile-pantry,pantry",17656,Immaculate Conception Catholic Church,60632,41.813529,-87.69367367398242
+"5016 W Armitage Ave, Chicago, IL 60639, USA",pantry,8521,Iglesia Evangelica Emmanuel,60639,41.9169438003846,-87.75161071482627
+"5016 W Armitage Ave, Chicago, IL 60639",produce-mobile,8520,Iglesia Evangelica Emanuel,60639,41.9169438003846,-87.75161071482627
+"2809 West Devon Avenue, Chicago, IL, United States",pantry,17759,ICNA Relief-Chicago,60659,41.997471175785364,-87.7000408077615
+"4608 S Drexel Blvd, Chicago, IL, USA",soup-kitchen,19921,Hyde Park SDA Soup Kitchen,60653,41.81108602686691,-87.60381834910513
+"7648 N Paulina St, Chicago, IL 60626",pantry,8518,Howard Area Community Center,60626,42.02078745,-87.67341682761261
+"5900 W Iowa St, Chicago, IL 60651","mobile-pantry,pantry",8516,Hope Food Pantry,60651,41.89680505,-87.77261103575728
+"1258 West 103rd Street, Chicago, IL 60643, USA",pantry,21322,Holy Zion MBC,60643,41.7067906,-87.6551462
+"647 W 69th St, Chicago, IL 60621",pantry,8515,Holy Willing Workers of Christ,60621,41.768733350000005,-87.64161277486276
+"1423 W 112th St, Chicago, IL 60643",soup-kitchen,8513,Holy Name of Mary,60643,41.69032334293881,-87.65738232780384
+"4941 W Chicago Ave, Chicago, IL 60651",pantry,8508,Healing Temple COGIC #1 Pantry,60651,41.89467125,-87.75009886994053
+"7901 S Stony Island Ave, Chicago, IL 60617",pantry,8506,Haven of Rest,60617,41.7206882,-87.5851659
+"1908 S Millard Ave , Chicago, IL 60623",pantry,8504,"Harmony Community Cares, NFP",60623,41.85462555,-87.71675388601724
+"6201 S Throop St, Chicago, IL 60636",pantry,8502,Greater St. John AME Church,60636,41.7812376,-87.65678244484877
+"12301 South Michigan Avenue, Chicago, IL, USA",mobile-pantry,47527,Greater New Mt. Eagle,60628,41.670459699999995,-87.61990382639654
+"5856 S Wabash Ave, Chicago, IL 60637",pantry,8499,Greater Metropolitan M.B. Church,60637,41.78818887021042,-87.62402994164961
+"246 N California Ave , Chicago, IL 60612",pantry,8498,Greater Holy Temple C.O.G.I.C.,60612,41.8856639,-87.6966353
+"3757 W. Douglas Blvd, Chicago, IL 60623",pantry,8497,Greater Garfield MB Church,60623,41.86186505,-87.71995308474715
+"6758 S Wabash Ave, Chicago, IL 60637",pantry,8496,Greater Acquaintance Religious,60637,41.7843289,-87.6238265
+"1136 E 93rd St, Chicago, IL 60619",pantry,8495,Grant A Wish Inc.,60619,41.72597715,-87.59582652478971
+"4201 N Monticello Ave, Chicago, IL 60618",pantry,8492,Grace Evangelic Covenant Church,60618,41.9396721,-87.7186407
+"8152 S Saginaw Ave, Chicago, IL 60617",pantry,8490,Gospel Way Covenant Church,60617,41.746634349999994,-87.56045762687086
+"5600 S Indiana Ave, Chicago, IL 60637",pantry,8489,Gorham UMC,60637,41.7928116,-87.6211608
+"502 N Central Ave, Chicago, IL 60644",soup-kitchen,8484,Fraternite Notre Dame SK,60644,41.8894762,-87.7656131
+"502 N Central Ave, Chicago, IL 60644",pantry,8483,Fraternite Notre Dame,60644,41.8894762,-87.7656131
+"2715 W Harrison St, Chicago, IL 60612",shelter,8481,Franciscan House Shelter,60612,41.873544949999996,-87.69455682506666
+"126 E Chestnut St, Chicago, IL 60611",soup-kitchen,8479,Fourth Presbyterian Church Sunday Supper,60611,41.89845221172741,-87.62519724522755
+"126 E Chestnut St, Chicago, IL 60611",soup-kitchen,8478,Fourth Presbyterian Church Bag Lunch Program,60611,41.89845221172741,-87.62519724522755
+"1923 W 51st St, Chicago, IL 60609",pantry,8475,For Your Consciousness,60609,41.800997,-87.6730274
+"7945 S Exchange Ave, Chicago, IL 60617",pantry,8474,First Worldwide Ministries,60617,41.75108455102041,-87.55277353061224
+"6400 S Kimbark Ave , Chicago, IL 60637",pantry,8472,First Presbyterian: Kimbark PY,60637,41.778502200000005,-87.5950088453792
+"1649 W LeMoyne St, Chicago, IL 60622",pantry,8470,First Bethlehem Lutheran Ch.,60622,41.9090838,-87.6700956
+"951 E 132nd Place, Chicago, IL 60601",pantry,39709,Families Feeding Families,60601,41.655191582446825,-87.59745411595532
+"909 W Wilson Ave, Chicago, IL 60640, USA",pantry,41461,EZRA Multi-Service Center,60640,41.96515615,-87.65288396135364
+"2050 W 59th St, Chicago, IL 60636",pantry,8459,Evening Star MBC,60636,41.78702185,-87.67627704740397
+"214 E 115th St, Chicago, IL 60628",pantry,8458,Evangelism Outreach Ministries,60628,41.68546199602923,-87.61742599700806
+"2827 W Division St, Chicago, IL 60622",pantry,8457,European American Association,60622,41.903434399999995,-87.6784625
+"2524 South Keeler Avenue, Chicago, IL 60623, USA",produce-mobile,47976,Epiphany,60623,41.8453095,-87.72972093724704
+"2334 North 75th Avenue, Elmwood Park, IL 60707, USA",pantry,77547,ELMWOOD PARK COMMUNITY FOOD PANTRY,60707,41.922075093784024,-87.81364008554311
+"500 East 67th Street, Chicago, IL 60637, USA",pantry,31455,Edward G. Irvin Foundation,60637,41.77333875,-87.61270334283293
+"4501 S Vincennes Ave, Chicago, IL 60653",pantry,8450,Ebenezer MBC Food Pantry,60653,41.8128499,-87.6135733681493
+"10505 S Halsted St, Chicago, IL 60628",pantry,8445,Covenant Faith Church of God,60628,41.7031262276854,-87.6426059166177
+"4626 N Clifton Ave, Chicago, IL 60640","pantry,soup-kitchen",8444,Cornerstone Community Outreach,60640,41.966501199999996,-87.65904812572496
+"12446 S Loomis St, Calumet Park, IL 60827",pantry,8439,Community Covenant Church PY,60827,41.6648509,-87.656092
+"3744 N Damen Ave, Chicago, IL 60618, USA","pantry,produce-mobile",8438,Common Pantry,60618,41.949721,-87.678743
+"12814 South Lowe Avenue, Chicago, IL 60628, United States",pantry,15157,Colonial Village Church Of Christ,60628,41.6608969,-87.63818252891744
+"118 N Central Ave, Chicago, IL 60644",pantry,8437,Circle Urban Ministries,60644,41.88283715,-87.76521898841743
+"4945 S Dorchester Ave, Chicago, IL 60615",pantry,8435,Church of St. Paul and the Redeemer,60615,41.8045716,-87.59134568329668
+"5252 S Ashland Ave, Chicago, IL 60609",pantry,8431,Christ Temple COC Food Pantry,60609,41.7979988,-87.66507025940166
+"8927 S Houston Ave, Chicago, IL 60617",pantry,8429,Christ Life Church Chicago,60617,41.73285625,-87.54962377682067
+"1511 N Long Ave, Chicago, IL 60651",pantry,8427,Christ Evangelical Luthern Church,60651,41.9078096,-87.7606134
+"7877 S Coles Ave, Chicago, IL 60649",pantry,8675,Christ Bible Church of Chicago,60649,41.752452250000005,-87.55042706223674
+"4310 S Champlain Ave, Chicago, IL 60653",pantry,8424,Chosen Tabernacle Full Gospel,60653,41.816531624999996,-87.6105175
+"126 E Chestnut St, Chicago, IL 60611",pantry,8451,Chicago Lights Elam Davies Social Service Center,60611,41.89845221172741,-87.62519724522755
+"2505 N Kedzie Blvd, Chicago, IL 60647",pantry,8422,Chicago Hope Food Pantry,60647,41.92680839870164,-87.70716830190308
+"2704 W North Ave, Chicago, IL 60647",pantry,8594,Chicago Dream Center Manna for Life,60647,41.9103325591337,-87.69483297605746
+"5815 S Homan Ave, Chicago, IL 60629, USA",mobile-pantry,47974,Chicago Area Project  (ABH) at Tonti School,60629,41.787440149999995,-87.70770649685437
+"8812 S Commercial Ave, Chicago, IL 60617",pantry,8418,Centro Comunitario Juan Diego,60617,41.734948,-87.55177842374368
+"1434 W 51st St, Chicago, IL, United States",soup-kitchen,12329,Central American Martyrs Ctr. Su Casa,60609,41.80166735,-87.66139595000001
+"4537 S Ashland Ave, Chicago, IL 60609",pantry,8413,Catholic Charities: Casa Catalina,60609,41.8111882,-87.6647591
+"740 E 77th St, Chicago, IL 60619",pantry,8585,Carlene S. Lilly Seed of Hope Food Pantry,60619,41.755113699999995,-87.6061899470859
+"1448 S Homan Ave, Chicago, IL 60623",pantry,8410,Carey Tercentenary AME Church,60623,41.86136918206821,-87.71051123873409
+"7157 S Greenwood Ave , Chicago, IL 60619",pantry,8409,Carey Temple AME Food Pantry,60619,41.7643142,-87.59793832778139
+"1545 W Morse Ave, Chicago, IL 60626, USA",pantry,71742,Care for Real – Temporary Location,60626,42.00778200613258,-87.6684793702909
+"5341 N Sheridan Rd, Chicago, IL 60640",pantry,8408,Care For Real,60640,41.97943476190476,-87.65495557142857
+"530 W Fullerton Pkwy, Chicago, IL 60614, USA",soup-kitchen,20083,Care for Friends,60614,41.9255301,-87.6440163
+"6659 S Harvard Ave , Chicago, IL 60621",pantry,8406,Canaan M.B.C. Food Ministry,60621,41.7728902,-87.63286825943152
+"12549 S Ashland Ave, Calumet Park, IL 60827, USA",older-adult-choice-market,8792,Calumet Park Township Senior Center,60827,41.66570116000504,-87.66088606191448
+"7000 S Jeffery Blvd, Chicago, IL 60649, USA","pantry,soup-kitchen",25302,Bryn Mawr Community Foundation,60649,41.7727125,-87.5764823
+"3334 W Carroll Ave, Chicago, IL 60624",pantry,8399,Breakthrough Urban Ministries Fresh Market,60624,41.88776245,-87.71009132731402
+"3334 W Carroll Ave, Chicago, IL 60624",produce-mobile,8398,Breakthrough Urban Ministries,60624,41.88776245,-87.71009132731402
+"3528 South Hermitage Avenue, Chicago, IL 60609, USA",pantry,8396,Blessed Sacrament Parish St. Maurice Church,60609,41.8159901,-87.6688145
+"9356 S Justine St , Chicago, IL 60620",pantry,8392,Beverly Hills SDA Church,60620,41.7233533,-87.66198761183256
+"6201 S Sangamon St, Chicago, IL 60621",pantry,8391,Bethel Imani Lutheran Pantry,60621,41.7814162,-87.64800550081225
+"3052 S Gratten Ave, Chicago, IL 60608, USA",pantry,8387,Benton House,60608,41.8388918,-87.65410865850001
+"7326 S Racine Ave, Chicago, IL 60636",pantry,8382,Back To God Church,60636,41.76064305,-87.65435034825073
+"5071 W Congress Pkwy, Chicago, IL 60644",older-adult-choice-market,8786,Austin Senior Center,60644,41.87375405,-87.752318173401
+"1767 E 79th St, Chicago, IL 60649",older-adult-choice-market,8791,Atlas Senior Center,60649,41.7515471,-87.5805371
+"3777 W Columbus Ave, Chicago, IL 60652",pantry,8379,Arab American Ed. Council,60652,41.739737950000006,-87.71556043590692
+"3401 W Ainslie St, Chicago, IL 60625, USA",mobile-pantry,8375,American Indian Center,60625,41.9699781,-87.71377019722436
+"10946 S Lowe Ave, Chicago, IL 60628, USA",soup-kitchen,22580,Allen Metropolitan Church,60628,41.69517765007854,-87.63894241869924
+"6600 S Hermitage Ave, Chicago, IL 60636",pantry,8372,All Things Through Christ,60636,41.7738024,-87.66802593688651
+"3253 W Wilson Ave, Chicago, IL 60625",pantry,8369,Albany Park Food Pantry,60625,41.9644225,-87.71039804484317
+"2750 W Roosevelt Rd, Chicago, IL 60608",pantry,8363,A Safe Haven Foundation: PY,60608,41.8671317,-87.69501823748114
+"7649 N Paulina St, Chicago, IL 60626","produce-mobile,soup-kitchen",8362,A Just Harvest,60626,42.0207703,-87.67280922789597
+"1438 W 63rd St, Chicago, IL 60636, USA",produce-mobile,41910,7TH DISTRICT POLICE DEPT,60636,41.779611,-87.660408

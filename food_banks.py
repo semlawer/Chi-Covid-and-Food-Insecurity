@@ -11,7 +11,7 @@ import bs4
 import pandas as pd
 from geopy.geocoders import Nominatim
 
-output_filename = 'food_banks_test.pkl'
+OUTPUT_FILENAME = 'output_data/food_banks_data.csv'
 URL = 'https://www.chicagosfoodbank.org/find-food/'
 VALID_ZIPS = ['60601', '60602', '60603', '60604', '60605','60606', '60607',
                   '60608', '60609', '60610', '60611', '60612', '60613', '60614', 
@@ -23,14 +23,17 @@ VALID_ZIPS = ['60601', '60602', '60603', '60604', '60605','60606', '60607',
                   '60654', '60655', '60656', '60657', '60659', '60660', '60661',
                   '60666', '60707','60827']
 
-def go():
+def go(output_filename=OUTPUT_FILENAME):
     '''
-    Saves file as pickle
+
     '''
 
     df = get_locations()
     food_banks_df = process_df(df)
-    covid_df.to_pickle(output_filename, index=False)
+    food_banks_df.to_csv(output_filename, index=False)
+
+    return food_banks_df
+    
 
 
 def get_html_document(url=URL):

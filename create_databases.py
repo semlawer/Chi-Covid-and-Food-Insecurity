@@ -13,23 +13,44 @@ import pandas as pd
 import geopandas as gpd
 from sqlalchemy import create_engine
 
+ZIP_BOUNDARIES = 'input_data/zip_bndries/zip_bndries.shp'
+BASE_MAP = gpd.read_file(ZIP_BOUNDARIES)
+
 
 def gen_sqlite(data):
     '''
-    Creates a SQLite database from a pandas
-    df
+    Creates a SQLite database from a pandas dataframe
 
     Inputs: pandas df
     Returns: None
     '''
 
-    engine = create_engine('sqlite:///CS_covid_food/chifood2.sqlite3', echo=False)
+    engine = create_engine('sqlite:///CS_covid_food/chifood.sqlite3', echo=False)
     sqlite_connection = engine.connect()
-    data.to_sql('data2', sqlite_connection)
+    data.to_sql('data', sqlite_connection)
     sqlite_connection.close()
 
 
-def gen_shapefiles()
+def gen_shapefiles(map_data, food_banks_df, base_map=BASE_MAP):
+    '''
+    Creates two shapefiles. One contains data of COVID-19
+    death rates and food insecurity by zip code. The other contains
+    the food bank locations.
+    '''
+
+    map_data.columns = ["zip", "fs_ratio", "pr_fs_ratio", "death_rate"]
+    base_map = base_map.astype({"zip": 'int64'})
+    covid_food = base_map.merge(map_data[["zip", "fs_ratio", "pr_fs_ratio", "death_rate"]],
+                               how="inner", on="zip")
+    covid_food.to_file("CS_covid_food/map_query/data/covid_food.shp")
+    
+    food_banks_gpd = gpd.GeoDataFrame(food_banks_df, 
+                                  geometry=gpd.points_from_xy(food_banks_df.lon, 
+                                                              food_banks_df.lat))
+    food_banks_gpd.to_file("CS_covid_food/map_query/data/food_banks.shp")
+
+
+
 
 
 
