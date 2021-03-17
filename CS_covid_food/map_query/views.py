@@ -22,6 +22,7 @@ COLUMN_NAMES = dict(
     total_population='Population (Total)',
     perc_black='Population (% Black)',
     perc_hispanic='Population (% Hispanic)',
+    perc_minority='Population (% Minority)',
     perc_unemployed='Population (% Unemployed)',
     median_income='Median Income',
     perc_poverty='Population (% Poverty)',
