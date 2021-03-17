@@ -28,14 +28,17 @@ fi
 
 printf "${White}    --Python 3.7 is installed \n${Color_Off}"
 
-# 2. What OS are we running on?
+#2. Check the version
+printf "${Blue}2. Please check your Postgres (13.2) and PostGis () versions \xF0\x9F\x94\x8D \n${Color_Off}"
+
+# 3. What OS are we running on?
 PLATFORM=$($PYTHON -c 'import platform; print(platform.system())')
 
 printf "${Blue}2. Checking OS Platform... \n${Color_Off}"
 printf "${White}    --OS=Platform=$PLATFORM \n${Color_Off}"
 
-# 3. Create Virtual environment 
-printf "${Blue}Creating new virtual environment... \n${Color_Off}"
+# 4. Create Virtual environment and install requirements
+printf "${Blue}Creating new virtual environment and install requirements... \n${Color_Off}"
 
 # Ask if the user wants to remove the env directory if it exists 
 if [[ -d env ]]; then
@@ -72,25 +75,10 @@ else
     pip install -r data_wrangling_requirements.txt
 fi
 
-# 4. Install Requirements 
-# printf "${Blue}4. Installing Requirements... \n${Color_Off}"
-
-# if [[ ! -e "requirements.txt" ]]; then 
-#     printf "${White}    --Need to requirements.txt to install packages. \n${Color_Off}"
-#     exit 1
-# fi
-
-# source env/bin/activate
-# if [ $ans_env == y ]; then
-#     pip install -r requirements.txt
-#     pip install -r data_wrangling_requirements.txt
-# fi
-# printf "${White}Package instalation ended... \n${Color_Off}"
-
 # 5. Select the way to get test the code: loaded data or run scraper
 
 # optional flags for selecting the way to get the data
-# : loaded data
+# : loaded dat
 
 while getopts d: opt; do
     case $opt in
@@ -99,23 +87,23 @@ while getopts d: opt; do
 done
 
 ## 
-
 if [ "$data" == scrap ]; then
     if [ -f "CS_covid_food/chifood.sqlite3" ]; then
         printf "${Red}Removing sqlite3 file to load the new one... \n${Color_Off}"
         rm CS_covid_food/chifood.sqlite3
     fi
-    printf "${Cyan}Running scraping functions... \n${Color_Off}"
+    printf "${Blue}Running scraping functions... \n${Color_Off}"
     printf "${Red}This process may take a while. Please grab a coffee and enjoy waiting!! \xE2\x8F\xB3 \xF0\x9F\x8D\xB5\n \n${Color_Off}"
     $PYTHON go.py
 fi
 
 
 #prelims 
+printf "${Blue}Starting Django... \n${Color_Off}"
 pkill postgres 
 
-db_name='db_chifood_proj_3'
-username='cs_project_3'
+db_name='chifood_covid'
+username='capp_project'
 
 initdb -D $db_name
 pg_ctl -D $db_name -l logfile start # killall postgres
