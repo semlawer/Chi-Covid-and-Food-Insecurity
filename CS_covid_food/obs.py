@@ -56,7 +56,7 @@ def find_obs(args_from_ui):
     if not args_from_ui:
         return ([], [])
 
-    connection = sqlite3.connect("chifood.sqlite3")
+    connection = sqlite3.connect("CS_covid_food/chifood.sqlite3")
     cursor = connection.cursor()
 
     query, arguments = build_query(args_from_ui)
