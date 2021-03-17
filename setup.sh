@@ -29,7 +29,7 @@ fi
 printf "${White}    --Python 3.7 is installed \n${Color_Off}"
 
 #2. Check the version
-printf "${Blue}2. Please check your Postgres (13.2) and PostGis () versions \xF0\x9F\x94\x8D \n${Color_Off}"
+printf "${Blue}2. Please check your Postgres (13.2) and PostGis (3.1) versions \xF0\x9F\x94\x8D \n${Color_Off}"
 
 # 3. What OS are we running on?
 PLATFORM=$($PYTHON -c 'import platform; print(platform.system())')
