@@ -9,8 +9,8 @@ DATA_DIR = os.path.dirname(__file__)
 DATABASE_FILENAME = os.path.join(DATA_DIR, 'chifood.sqlite3')
 SELECT_CLAUSE = '''SELECT data.zipcode, data.death_rate_cumulative,
                    data.fs_ratio, data.pr_fs_ratio, data.total_population,
-                   data.perc_black, data.perc_hispanic, data.perc_unemployed,
-                   data.median_income, data.perc_poverty'''
+                   data.perc_black, data.perc_hispanic, data.perc_minority, 
+                   data.perc_unemployed, data.median_income, data.perc_poverty'''
 FROM_CLAUSE = '''FROM data'''
 
 
@@ -56,7 +56,7 @@ def find_obs(args_from_ui):
     if not args_from_ui:
         return ([], [])
 
-    connection = sqlite3.connect("chifood.sqlite3")
+    connection = sqlite3.connect("CS_covid_food/chifood.sqlite3")
     cursor = connection.cursor()
 
     query, arguments = build_query(args_from_ui)

@@ -33,7 +33,7 @@ def build_request(data_url=DATA_URL, app_token=APP_TOKEN, limit=10000, select=CO
 
 def get_request(api_request):
     '''
-    Returns JSON of COVID-19 Data by Zip Code.
+    Returns JSON of Grovery Stores Data by Zip Code.
     '''
 
     r = requests.get(api_request)
@@ -65,6 +65,7 @@ def grocery_by_zip(df):
 
 def grocery_store():
     '''
+    Main function that runs the rest of the functions in order
     '''
 
     build = build_request()

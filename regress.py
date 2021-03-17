@@ -17,6 +17,7 @@ from sklearn.impute import SimpleImputer
 
 def read_in(datas):
     '''
+    Reads in CSV datasets and outputs as Pandas dataframe
     '''
     intro = "{}.csv".format(datas)
     df = pd.read_csv(intro)
@@ -25,6 +26,9 @@ def read_in(datas):
 
 def regression(food, acs, covid):
     '''
+    Merges the ACS socioeconomic factors to the Food measures and performs
+    a regression between them. Creates predicted measure of food swamp.
+    Adjusts for the fact that some zip codes do not have demographic information.
     '''
     merge = acs.merge(food, on="zipcode", how="inner")
     X = merge[["perc_black", "perc_hispanic" , "perc_unemployed", "perc_poverty",
@@ -40,6 +44,11 @@ def regression(food, acs, covid):
 
 
 def model(food_swamp_data, acs_data, covid_data):
+    '''
+    Preps the data for the Django interface by combining the ACS, Food Swamp,
+    and COVID-19 data together. Creates two Pandas dataframes, one for each
+    element of the Django interface.
+    '''
     food_swamp = read_in(food_swamp_data)
     acs = read_in(acs_data)
     covid = read_in(covid_data)
