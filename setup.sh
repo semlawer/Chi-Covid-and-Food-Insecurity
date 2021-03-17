@@ -45,30 +45,45 @@ if [[ -d env ]]; then
         printf "${Red}Deleting virtual environment... \n${Color_Off}"
         rm -rf env
         $PYTHON -m venv env
+        printf "${Blue}4. Installing Requirements... \n${Color_Off}"
+        if [[ ! -e "requirements.txt" ]]; then 
+            printf "${White}    --Need to requirements.txt to install packages. \n${Color_Off}"
+            exit 1
+        fi
+        source env/bin/activate
+        pip install -r requirements.txt
+        pip install -r data_wrangling_requirements.txt
         if [[ ! -d env ]]; then 
             echo -e "    --Could not create virtual environment...Please make sure venv is installed"
             exit 1
         fi
     fi
-
 else
     $PYTHON -m venv env
-fi
-
-# 4. Install Requirements 
-printf "${Blue}4. Installing Requirements... \n${Color_Off}"
-
-if [[ ! -e "requirements.txt" ]]; then 
-    printf "${White}    --Need to requirements.txt to install packages. \n${Color_Off}"
-    exit 1
-fi
-
-source env/bin/activate
-if [ $ans_env == y ]; then
+    source env/bin/activate
+    printf "${Blue}4. Installing Requirements... \n${Color_Off}"
+    if [[ ! -e "requirements.txt" ]]; then 
+        printf "${White}    --Need to requirements.txt to install packages. \n${Color_Off}"
+        exit 1
+    fi
     pip install -r requirements.txt
     pip install -r data_wrangling_requirements.txt
 fi
-printf "${White}Package instalation ended... \n${Color_Off}"
+
+# 4. Install Requirements 
+# printf "${Blue}4. Installing Requirements... \n${Color_Off}"
+
+# if [[ ! -e "requirements.txt" ]]; then 
+#     printf "${White}    --Need to requirements.txt to install packages. \n${Color_Off}"
+#     exit 1
+# fi
+
+# source env/bin/activate
+# if [ $ans_env == y ]; then
+#     pip install -r requirements.txt
+#     pip install -r data_wrangling_requirements.txt
+# fi
+# printf "${White}Package instalation ended... \n${Color_Off}"
 
 # 5. Select the way to get test the code: loaded data or run scraper
 
@@ -97,8 +112,8 @@ fi
 #prelims 
 pkill postgres 
 
-db_name='db_chifood_proj'
-username='cs_project'
+db_name='db_chifood_proj_2'
+username='cs_project_2'
 
 initdb -D $db_name
 pg_ctl -D $db_name -l logfile start # killall postgres
