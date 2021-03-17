@@ -34,7 +34,6 @@ def regression(food, acs, covid):
     predict_food = reg.predict(X)
     score = reg.score(X,y)
     merge["pr_fs_ratio"] = predict_food
-    print(merge)
     merge_full = merge.merge(food, on =["zipcode", "Chains", "Fast Food", "grocery_store", "fs_ratio"], how="outer")
     merge_full = merge_full.merge(covid, on="zipcode", how="outer").round(2)
     return merge_full
