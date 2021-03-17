@@ -30,6 +30,7 @@ def regression(food, acs, covid):
     a regression between them. Creates predicted measure of food swamp.
     Adjusts for the fact that some zip codes do not have demographic information.
     '''
+
     merge = acs.merge(food, on="zipcode", how="inner")
     X = merge[["perc_black", "perc_hispanic" , "perc_unemployed", "perc_poverty",
         "perc_homeowners", "median_income"]]
@@ -40,6 +41,7 @@ def regression(food, acs, covid):
     merge["pr_fs_ratio"] = predict_food
     merge_full = merge.merge(food, on =["zipcode", "Chains", "Fast Food", "grocery_store", "fs_ratio"], how="outer")
     merge_full = merge_full.merge(covid, on="zipcode", how="outer").round(2)
+
     return merge_full
 
 
@@ -49,6 +51,7 @@ def model(food_swamp_data, acs_data, covid_data):
     and COVID-19 data together. Creates two Pandas dataframes, one for each
     element of the Django interface.
     '''
+
     food_swamp = read_in(food_swamp_data)
     acs = read_in(acs_data)
     covid = read_in(covid_data)

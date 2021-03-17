@@ -15,7 +15,9 @@ import create_databases
 
 def run():
     '''
-
+    Retrieves and processes each data source. Respective files
+    are saved in the output_data folder. Also generates the SQL
+    databases required for the Django web application
     '''
 
     # Saves covid_data.csv to output_data folder
@@ -37,7 +39,7 @@ def run():
     # Saves food_banks.csv to output_data folder
     food_banks_df = food_banks.go()
     
-    # Creates databases and saves them to Django directory 
+    # Creates databases and saves them to Django directory (CS_covid_food)
     create_databases.gen_sqlite(table_data)
     create_databases.gen_shapefiles(map_data, food_banks_df)
 

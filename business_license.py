@@ -83,6 +83,7 @@ def fuzzy_match_names(df_1, df_2, key1, key2, threshold, limit):
     is higher than the set threshold, then it is considered a name match.
     Keeps only the business license information for the records that match.
     '''
+
     s = df_2[key2].tolist()
     m = df_1[key1].apply(lambda x: process.extract(x, s, limit=limit))    
     df_1['matches'] = m

@@ -28,6 +28,7 @@ def scrape(soup):
     This function scrapes through the website to extract American 
     fast food information.
     '''
+
     fast_food = []
     finder_block = soup.find("h5")
     list_food = finder_block.previousSibling.previousSibling

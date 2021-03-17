@@ -22,6 +22,7 @@ def read_and_clean_data(csv_file):
 
     Retuns: df, a clean dataframe to extract desired columns from
     '''
+
     if not os.path.exists(csv_file):
         return None
     all_data = pd.read_csv(csv_file, header=1, low_memory=False)
@@ -60,6 +61,7 @@ def summarize_employment(csv_file):
     Returns:
         homes: panda dataframe with information extracted from employment data
     '''
+
     build = ['ZCTA','perc_unemployed', 'median_income', 'perc_poverty']
 
     extract = ['Geographic Area Name',
@@ -85,6 +87,7 @@ def summarize_demographics(csv_file):
     Returns:
         demo: panda dataframe with column data on race and gender.
     '''
+
     build = ['ZCTA','total_population', 'perc_female', 'perc_non_white', 'perc_black',
             'perc_hispanic']
 
@@ -163,12 +166,3 @@ def go(csv_demographic, csv_employment, csv_housing, csv_zips):
 
     acs_csv = acs.to_csv('output_data/acs_data.csv')
 
-
-
-
-    
-
-
-
-
-    

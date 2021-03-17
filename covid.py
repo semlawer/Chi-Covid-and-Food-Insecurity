@@ -33,6 +33,11 @@ def go(output_filename=OUTPUT_FILENAME):
 def build_request(data_url=DATA_URL, app_token=APP_TOKEN, limit=10000, select=COLS):
     '''
     Returns string to feed into get_request.
+    Inputs:
+        data_url: (str) URL of data source
+        app_token: (str) API key
+        limit: (int) number of rows to retrieve
+        select: (dict) columns to download
     '''
 
     api_request = DATA_URL
@@ -45,7 +50,12 @@ def build_request(data_url=DATA_URL, app_token=APP_TOKEN, limit=10000, select=CO
 
 def get_request(api_request):
     '''
-    Returns JSON of COVID-19 Data by Zip Code.
+    Processes and retrievs API request of COVID-19 Data by 
+    Zip Code
+    Inputs:
+        api_request: (str) string of API request
+    Returns:
+        covid_json: (json) json file of COVID-19 death rate data
     '''
 
     r = requests.get(api_request)
@@ -57,6 +67,11 @@ def get_request(api_request):
 def process_data(covid_json):
     '''
     Returns a processed pandas dataframe
+    Inputs: 
+        - covid_json of data
+    Returns:
+        - df: (pandas df) processed COVID-19 death
+        rate data
     '''
 
     raw = pd.DataFrame.from_dict(covid_json)

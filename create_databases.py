@@ -36,6 +36,13 @@ def gen_shapefiles(map_data, food_banks_df, base_map=BASE_MAP):
     Creates two shapefiles. One contains data of COVID-19
     death rates and food insecurity by zip code. The other contains
     the food bank locations.
+
+    Inputs:
+        - map_data (df): pandas dataframe containing the data 
+        use to create Django map layers
+        - food_banks_df: pandas dataframe containing the data for the
+        locations of food banks
+        - base_map: geopandas dataframe containing zip code layer
     '''
 
     map_data.columns = ["zip", "fs_ratio", "pr_fs_ratio", "death_rate"]
