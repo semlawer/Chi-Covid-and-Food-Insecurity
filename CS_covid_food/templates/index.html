@@ -21,7 +21,9 @@
 
     <h1>COVID-19 Death Rates and Food Insecurity in Chicago, IL</h1>
 
-    <p>Authors: Valeria Balza, Gabriela Palacios, Mariel Wiechers and Sophia Mlawer</p>
+    <p style="color:black;font-size:14px;"> <b> CAPP 30122 Final Project </b></p>
+    <p style="color:black;font-size:14px;"> Authors: Valeria Balza, Gabriela Palacios, Mariel Wiechers and Sophia Mlawer</p>
+    <p style="color:black;font-size:12px;"> The map of Chicago, IL below showcases (i) COVID-19 death rates (per 100,000 people); (ii) a “food swamp” indicator; a (iii) predicted “food swamp” indicator based on demographic and socioeconomic variables; and (iv) the location of food banks. The database leverages the American Community Survey as well as data from the City of Chicago’s Data Portal to predict via regression analysis which zip codes are most likely to be food swamps. We define ‘food swamps’ as areas with a high density of establishments selling high-calorie foods relative to healthier options (e.g., fast-food and discount variety stores). For further exploration of the data, please see the Data Search Engine below. </p>
  
     
     <script type="text/javascript">
@@ -134,7 +136,9 @@
           }
   </script>
   {% leaflet_map "gis" callback="window.our_layers" %}
-    <div class="frame">
+  <p style="color:black;font-size:14px;"> <b>Data Search Engine</b> </p> 
+  <p style="color:black;font-size:13px;"> Please select your query arguments below: </p> 
+  <div class="frame">
         <form method="get">
             {% csrf_token %}
             <table class="form">
