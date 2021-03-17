@@ -112,8 +112,8 @@ fi
 #prelims 
 pkill postgres 
 
-db_name='db_chifood_proj_2'
-username='cs_project_2'
+db_name='db_chifood_proj_3'
+username='cs_project_3'
 
 initdb -D $db_name
 pg_ctl -D $db_name -l logfile start # killall postgres
