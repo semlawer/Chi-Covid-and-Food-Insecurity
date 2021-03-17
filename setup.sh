@@ -55,7 +55,6 @@ if [[ -d env ]]; then
         fi
         source env/bin/activate
         pip install -r requirements.txt
-        pip install -r data_wrangling_requirements.txt
         if [[ ! -d env ]]; then 
             echo -e "    --Could not create virtual environment...Please make sure venv is installed"
             exit 1
@@ -72,7 +71,6 @@ else
         exit 1
     fi
     pip install -r requirements.txt
-    pip install -r data_wrangling_requirements.txt
 fi
 
 # 5. Select the way to get test the code: loaded data or run scraper
