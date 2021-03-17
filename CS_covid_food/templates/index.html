@@ -8,17 +8,20 @@
 
     {% leaflet_js %}
     {% leaflet_css %}
-    <title>Chicago C-19 and Food Banks</title>
+    <title>COVID-19 and Food Swamps: Chicago, IL</title>
     <link rel="stylesheet" type="text/css" href="{% static 'leaflet_layercontrol/leaflet.groupedlayercontrol.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static "/main.css" %}" />
     <script type="text/javascript" src="{% static 'dist/leaflet.ajax.js' %}"> </script>
     <script type="text/javascript" src="{% static 'leaflet_layercontrol/leaflet.groupedlayercontrol.min.js' %}"> </script>
     <style type="text/css">
-        #gis {width: 80%; height:700px;}
+        #gis {width: 60%; height:700px;}
     </style>
   </head>
   <body>
 
-    <h1>Food Insecurity and Covid Rates in Chicago</h1>
+    <h1>COVID-19 Death Rates and Food Insecurity in Chicago, IL</h1>
+
+    <p>Authors: Valeria Balza, Gabriela Palacios, Mariel Wiechers and Sophia Mlawer</p>
  
     
     <script type="text/javascript">
@@ -118,10 +121,10 @@
 
               var groupedOverlays = {
                   "Layers": {
-                  "Covid": datasets_c,
-                  "Food_ratio": datasets_food,
-                  "Pr_food_insec": datasets_pr_food,
-                  "Food Banks": points
+                  "COVID-19 Death Rates": datasets_c,
+                  "Food Swamp Ratio": datasets_food,
+                  "Predicted Food Swamp Ratio": datasets_pr_food,
+                  "Food Bank Locations": points
                 }
 
               };
