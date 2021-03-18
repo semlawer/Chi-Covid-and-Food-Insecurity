@@ -44,6 +44,3 @@ use the table to show specific zip codes or find the zip codes that fit
 socioeconomic descriptions.
 
 Please see our write up for the list of python files and what each of them does.
-
-You may see these error messages:
-??????
