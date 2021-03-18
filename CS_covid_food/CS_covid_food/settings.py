@@ -81,8 +81,8 @@ WSGI_APPLICATION = 'CS_covid_food.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.contrib.gis.db.backends.postgis',
-        'NAME': 'chifood_covid',
-        'USER': 'capp_project',
+        'NAME': 'final_project_db',
+        'USER': 'capp_cs_122',
         'HOST': 'localhost',
         'PORT': '5432'
     }
