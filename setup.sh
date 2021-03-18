@@ -100,8 +100,8 @@ fi
 printf "${Blue}Starting Django... \n${Color_Off}"
 pkill postgres 
 
-db_name='chifood_covid'
-username='capp_project'
+db_name='final_project_db'
+username='capp_cs_122'
 
 initdb -D $db_name
 pg_ctl -D $db_name -l logfile start # killall postgres
