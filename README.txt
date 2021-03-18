@@ -16,11 +16,11 @@ Required Python Libraries:
 Please see requirements.txt for a complete list.
 
 To Run Software:
-To launch the Django application with the created databases, 
+First, to launch the Django application with the created databases, 
 type the following command in the bash command line:
     bash setup.sh
 
-To create the databases from scratch and launch the Django
+Alternatively, to create the databases from scratch and launch the Django
 application, type the following command in the bash command line:
     bash setup.sh -d scrap
 
